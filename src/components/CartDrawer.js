@@ -23,7 +23,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveFromCart, se
             animate={{ opacity: 0.6 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black z-50 cursor-pointer"
+            className="fixed inset-0 bg-black z-[80] cursor-pointer"
           />
 
           {/* Drawer Panel */}
@@ -32,7 +32,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveFromCart, se
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className={`fixed right-0 top-0 h-screen w-full sm:max-w-[400px] border-l z-50 shadow-2xl flex flex-col transition-colors duration-500 overflow-hidden ${
+            className={`fixed right-0 top-0 h-screen w-full sm:max-w-[400px] border-l z-[80] shadow-2xl flex flex-col transition-colors duration-500 overflow-hidden ${
               isLight ? "bg-white border-zinc-200" : "bg-[#0A0A0B] border-white/5"
             }`}
           >
