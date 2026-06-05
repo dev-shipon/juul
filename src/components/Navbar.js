@@ -68,13 +68,13 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
-      className={`fixed top-10 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 rounded-2xl sm:rounded-full backdrop-blur-2xl border transition-all duration-500 py-3 px-4 sm:px-8 ${
+      className={`fixed top-10 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50 rounded-2xl sm:rounded-full backdrop-blur-2xl border transition-all duration-500 py-3 px-4 sm:px-6 ${
         isLight 
           ? "bg-white/75 border-zinc-200/80 shadow-[0_15px_40px_rgba(0,0,0,0.06)] text-zinc-950" 
           : "bg-[#0A0A0B]/70 border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8),0_0_20px_rgba(16,185,129,0.03)] text-white"
       }`}
     >
-      <div className="flex items-center justify-between h-14 relative w-full">
+      <div className="flex items-center justify-between h-12 relative w-full min-w-0">
         
         {/* Left Side: Brand Logo & Cyber Sync Link */}
         <div className="flex items-center gap-6">
@@ -94,12 +94,12 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
 
         </div>
 
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-0.5 min-w-0 overflow-hidden">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`relative text-xs font-bold tracking-widest uppercase transition-all py-2.5 px-5 rounded-full cursor-pointer ${
+              className={`relative text-[10px] font-bold tracking-wider uppercase transition-all py-2 px-3 lg:px-5 rounded-full cursor-pointer whitespace-nowrap ${
                 isItemActive(item.id) 
                   ? isLight ? "text-white font-semibold" : "text-zinc-950 font-semibold"
                   : isLight ? "text-zinc-650 hover:text-zinc-950" : "text-zinc-400 hover:text-white"
@@ -122,7 +122,7 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
         </div>
 
         {/* Right Side: Sci-fi Cart, Theme Toggle & Glowing Action CTA */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 flex-shrink-0">
           
           {/* Cart Icon */}
           <button 
@@ -154,7 +154,7 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
           {/* Premium CTA */}
           <button 
             onClick={() => setCurrentPage("collection")}
-            className={`hidden sm:flex items-center gap-2 font-bold text-[10px] uppercase tracking-widest px-6 py-3 rounded-full cursor-pointer transition-all hover:scale-[1.03] shadow-sm ${
+            className={`hidden lg:flex items-center gap-2 font-bold text-[10px] uppercase tracking-widest px-5 py-2.5 rounded-full cursor-pointer transition-all hover:scale-[1.03] shadow-sm whitespace-nowrap ${
               isLight 
                 ? "bg-zinc-950 hover:bg-zinc-900 text-white" 
                 : "bg-white hover:bg-zinc-100 text-zinc-950"

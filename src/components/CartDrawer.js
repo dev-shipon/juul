@@ -32,7 +32,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveFromCart, se
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className={`fixed right-0 top-0 h-screen w-full sm:w-[400px] border-l z-50 shadow-2xl flex flex-col justify-between transition-colors duration-500 ${
+            className={`fixed right-0 top-0 h-screen w-full sm:max-w-[400px] border-l z-50 shadow-2xl flex flex-col justify-between transition-colors duration-500 ${
               isLight ? "bg-white border-zinc-200" : "bg-[#0A0A0B] border-white/5"
             }`}
           >
@@ -69,13 +69,13 @@ export default function CartDrawer({ isOpen, onClose, cart, onRemoveFromCart, se
                       isLight ? "bg-zinc-50 border-zinc-150" : "bg-white/[0.01] border-white/5"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
                       <div 
                         className="w-8 h-8 rounded-full flex-shrink-0"
                         style={{ backgroundColor: `${item.imgColor || '#4B5563'}40` }}
                       />
-                      <div className="text-left">
-                        <p className={`text-xs font-bold line-clamp-1 ${isLight ? "text-zinc-800" : "text-white"}`}>{item.name}</p>
+                      <div className="text-left min-w-0 flex-1 overflow-hidden">
+                        <p className={`text-xs font-bold truncate ${isLight ? "text-zinc-800" : "text-white"}`}>{item.name}</p>
                         <p className={`text-[10px] font-black mt-0.5 ${isLight ? "text-zinc-900" : "text-zinc-500"}`}>${item.price}</p>
                       </div>
                     </div>
