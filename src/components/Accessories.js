@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShoppingCart, Star, Eye, ChevronLeft, ChevronRight, ShoppingBag } from "lucide-react";
+import { ShoppingBag, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedProduct, theme }) {
+export default function Accessories({ onAddToCart, setSelectedProduct, theme }) {
   const isLight = theme === "light";
   const scrollRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -16,12 +16,12 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
       if (scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
         } else {
-          scrollRef.current.scrollBy({ left: 324, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: 340, behavior: "smooth" });
         }
       }
-    }, 1300);
+    }, 2000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -29,9 +29,9 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth } = scrollRef.current;
       if (scrollLeft <= 0) {
-        scrollRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+        scrollRef.current.scrollTo({ left: scrollWidth, behavior: "smooth" });
       } else {
-        scrollRef.current.scrollBy({ left: -324, behavior: 'smooth' });
+        scrollRef.current.scrollBy({ left: -340, behavior: "smooth" });
       }
     }
   };
@@ -40,76 +40,104 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
-        scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
       } else {
-        scrollRef.current.scrollBy({ left: 324, behavior: 'smooth' });
+        scrollRef.current.scrollBy({ left: 340, behavior: "smooth" });
       }
     }
   };
 
-  const newProducts = [
+  const accessoryProducts = [
     {
-      id: "carbon-kit",
-      name: "JUUL Device Kit - Carbon Black",
-      category: "kits",
-      price: 34.99,
-      originalPrice: 44.99,
-      salePrice: 34.99,
-      discount: 22,
-      rating: 5.0,
-      reviewsCount: 88,
-      imgColor: "#111827",
-      flavor: "classic",
-      tag: "Premium",
-      desc: "Super sleek matte carbon finish designed for pure style.",
-      image: "/deal-bundle.png"
+      id: "juul-charging-case",
+      name: "JUUL Portable Charging Case",
+      category: "accessories",
+      price: 119.00,
+      originalPrice: 149.00,
+      salePrice: 119.00,
+      discount: 20,
+      rating: 4.9,
+      reviewsCount: 124,
+      imgColor: "#18181B",
+      tag: "Best Seller",
+      desc: "Charge your JUUL device on the go. High-capacity battery case holds 1 JUUL device and 4 spare pods.",
+      image: "/deal-case.png"
     },
     {
-      id: "berry-pods",
-      name: "JUUL Pod Pack - Alpine Berry",
-      category: "pods",
-      price: 16.99,
-      originalPrice: 20.99,
-      salePrice: 16.99,
-      discount: 19,
-      rating: 4.7,
-      reviewsCount: 95,
-      imgColor: "#EC4899",
-      flavor: "berry",
-      tag: "New Drop",
-      desc: "Pack of 4 pre-filled pods with cool wild berries flavor.",
-      image: "/deal-triple.png"
-    },
-    {
-      id: "usb-dock",
+      id: "juul-usb-dock",
       name: "Magnetic USB Charging Dock",
       category: "accessories",
-      price: 9.99,
-      originalPrice: 14.99,
-      salePrice: 9.99,
-      discount: 33,
+      price: 29.00,
+      originalPrice: 39.00,
+      salePrice: 29.00,
+      discount: 25,
+      rating: 4.7,
+      reviewsCount: 88,
+      imgColor: "#3F3F46",
+      tag: "Essential",
+      desc: "Sleek, small, and cord-free magnetic USB charging dock. Get a full charge in under an hour from any USB port.",
+      image: "/cat-accessories.png"
+    },
+    {
+      id: "juul-charging-cable",
+      name: "Premium USB-C Charging Cable",
+      category: "accessories",
+      price: 39.00,
+      originalPrice: 49.00,
+      salePrice: 39.00,
+      discount: 20,
+      rating: 4.8,
+      reviewsCount: 45,
+      imgColor: "#111827",
+      tag: "New Drop",
+      desc: "High-durability braided USB-C fast charging cable featuring a magnetic dock interface designed for JUUL.",
+      image: "/cat-accessories.png"
+    },
+    {
+      id: "juul-silicone-sleeve",
+      name: "Silicone Protective Sleeve & Lanyard",
+      category: "accessories",
+      price: 19.00,
+      originalPrice: 29.00,
+      salePrice: 19.00,
+      discount: 34,
+      rating: 4.5,
+      reviewsCount: 56,
+      imgColor: "#DC2626",
+      tag: "Trending",
+      desc: "Keep your JUUL safe and easily accessible with this anti-slip, shockproof silicone case sleeve and neck lanyard.",
+      image: "/cat-accessories.png"
+    },
+    {
+      id: "juul-car-charger",
+      name: "Smart Dual USB Car Charger Adapter",
+      category: "accessories",
+      price: 25.00,
+      originalPrice: 35.00,
+      salePrice: 25.00,
+      discount: 28,
       rating: 4.6,
-      reviewsCount: 64,
-      imgColor: "#374151",
-      flavor: "classic",
-      tag: "Original",
-      desc: "Compact wireless USB dock to charge your JUUL anywhere.",
-      image: "/deal-case.png"
+      reviewsCount: 37,
+      imgColor: "#2563EB",
+      tag: "Utility",
+      desc: "High-speed dual port USB car charger. Charge your JUUL and smartphone simultaneously while driving.",
+      image: "/cat-accessories.png"
     }
   ];
 
   const handleProductClick = (prod) => {
-    setSelectedProduct(prod);
+    if (setSelectedProduct) {
+      setSelectedProduct(prod);
+    }
   };
 
-  const repeatedProducts = [...newProducts, ...newProducts, ...newProducts, ...newProducts];
+  const repeatedProducts = [...accessoryProducts, ...accessoryProducts];
 
   return (
     <section className={`py-24 border-b transition-colors duration-500 ${
       isLight ? "bg-white" : "bg-[#09090A]"
     }`}>
       <div className="max-w-7xl mx-auto px-6 text-left">
-        {/* Section Header */}
         {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -122,17 +150,20 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
             <span className={`text-xs font-bold uppercase tracking-widest ${
               isLight ? "text-zinc-400" : "text-zinc-500"
             }`}>
-              Featured Collection
+              Genuine Gear
             </span>
             <h2 className={`text-3xl sm:text-5xl font-black tracking-tight ${
               isLight ? "text-zinc-950" : "text-white"
             }`}>
-              New Arrivals Dubai
+              JUUL Accessories
             </h2>
+            <p className={`text-sm max-w-xl ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
+              Power up and protect your device with authentic JUUL accessories. Engineered for seamless compatibility and peak performance.
+            </p>
           </div>
         </motion.div>
 
-        {/* Auto Scrolling Product Slider */}
+        {/* Scrolling Product Slider */}
         <div 
           className="relative w-full overflow-hidden py-4 group/slider"
           onMouseEnter={() => setIsPaused(true)}
@@ -154,7 +185,7 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
 
           <div 
             ref={scrollRef}
-            className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 px-2"
+            className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 px-2 scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {repeatedProducts.map((prod, i) => {
@@ -166,14 +197,14 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
-                  transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                  transition={{ delay: (i % accessoryProducts.length) * 0.1, duration: 0.5, ease: "easeOut" }}
                   className={`group relative rounded-3xl border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 snap-center flex-shrink-0 w-[calc(100vw-48px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] ${
                     isLight
                       ? "bg-white border-zinc-200/80 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_36px_rgba(0,0,0,0.09)]"
                       : "bg-[#111112] border-white/[0.06] hover:border-white/10"
                   }`}
                 >
-                  {/* Discount pill */}
+                  {/* Discount badge */}
                   {prod.discount && (
                     <div
                       className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-white text-[10px] font-black uppercase tracking-wider shadow-md"
@@ -183,16 +214,13 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
                     </div>
                   )}
 
-                  {/* Low stock warning */}
-                  {prod.stock && (
-                    <div className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${
-                      isLight
-                        ? "bg-amber-50 text-amber-600 border border-amber-200"
-                        : "bg-amber-950/50 text-amber-400 border border-amber-800/30"
-                    }`}>
-                      Only {prod.stock} left!
-                    </div>
-                  )}
+                  {/* Rating Badge */}
+                  <div className={`absolute top-3 right-3 z-10 px-2 py-0.5 rounded-full text-[10px] font-bold flex items-center gap-1 ${
+                    isLight ? "bg-zinc-100 text-zinc-800" : "bg-zinc-800/80 text-zinc-200"
+                  }`}>
+                    <Star className="w-3 h-3 fill-amber-400 stroke-amber-400" />
+                    {prod.rating}
+                  </div>
 
                   {/* Product Image */}
                   <div 
@@ -215,13 +243,8 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
                       ) : (
-                        /* Fallback Mockup */
-                        <div
-                          className="w-8 h-28 rounded-md border flex flex-col items-center justify-between p-1 transition-all shadow-lg"
-                          style={{ backgroundColor: "#18181A", boxShadow: `0 10px 30px ${prod.imgColor}15` }}
-                        >
-                           <div className="w-full h-8 rounded-sm border-b border-black/40" style={{ backgroundColor: `${prod.imgColor}20` }} />
-                           <div className="w-2 h-2 rounded-full" style={{ backgroundColor: prod.imgColor }} />
+                        <div className="w-16 h-16 rounded-full bg-zinc-800 flex items-center justify-center">
+                          <ShoppingBag className="text-white w-8 h-8" />
                         </div>
                       )}
                     </motion.div>
@@ -230,37 +253,29 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
                   {/* Content */}
                   <div className="flex flex-col gap-3 p-5 flex-1 justify-between">
                     <div className="space-y-1.5 text-left">
-                      {/* Badge */}
-                      <span className={`text-[9px] font-black uppercase tracking-widest`} style={{ color: prod.imgColor }}>
-                        🔥 {prod.tag}
+                      <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: prod.imgColor }}>
+                        ⚡ {prod.tag}
                       </span>
                       <h3 
                         onClick={() => handleProductClick(prod)}
-                        className={`text-sm sm:text-base font-black leading-snug cursor-pointer hover:underline ${isLight ? "text-zinc-950" : "text-white"}`}
+                        className={`text-sm sm:text-base font-black leading-snug cursor-pointer hover:underline min-h-[44px] line-clamp-2 ${isLight ? "text-zinc-950" : "text-white"}`}
                       >
                         {prod.name}
                       </h3>
-                      <p className={`text-[11px] font-light leading-relaxed line-clamp-2 ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
+                      <p className={`text-[11px] font-light leading-relaxed line-clamp-2 min-h-[32px] ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
                         {prod.desc}
                       </p>
                     </div>
 
-                    {/* Pricing row */}
-                    <div className="space-y-3 text-left">
+                    {/* Pricing and Action row */}
+                    <div className="space-y-3 text-left pt-2">
                       <div className="flex items-end flex-wrap gap-x-2 gap-y-1">
                         <span className="text-2xl font-black" style={{ color: prod.imgColor }}>
                           AED {prod.salePrice || prod.price}
                         </span>
                         {prod.originalPrice && (
                           <span className={`text-sm line-through mb-0.5 ${isLight ? "text-zinc-400" : "text-zinc-600"}`}>
-                            {prod.originalPrice}
-                          </span>
-                        )}
-                        {savings && (
-                          <span className={`text-[10px] font-black mb-0.5 px-2 py-0.5 rounded-full ${
-                            isLight ? "bg-emerald-50 text-emerald-600" : "bg-emerald-950/50 text-emerald-400"
-                          }`}>
-                            Save AED {savings}
+                            AED {prod.originalPrice}
                           </span>
                         )}
                       </div>
@@ -268,7 +283,7 @@ export default function NewArrivals({ onAddToCart, setCurrentPage, setSelectedPr
                       {/* CTA Button */}
                       <motion.button
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => onAddToCart(prod)}
+                        onClick={() => onAddToCart && onAddToCart(prod)}
                         className={`w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer border ${
                           isLight
                             ? "bg-zinc-950 border-zinc-950 text-white hover:bg-zinc-800"

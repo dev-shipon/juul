@@ -10,7 +10,7 @@ import AppIntegration from "./AppIntegration";
 import FlavorTeaser from "./FlavorTeaser";
 import Features from "./Features";
 import HowItWorks from "./HowItWorks";
-import NewArrivals from "./NewArrivals";
+import Accessories from "./Accessories";
 
 import Juul360Viewer from "./Juul360Viewer";
 import HappyClients from "./HappyClients";
@@ -76,10 +76,9 @@ export default function Home({
       {/* 7.5 How It Works (Educational workflow for new users) */}
       <HowItWorks theme={theme} />
 
-      {/* 8. Featured Collection -> New Arrivals */}
-      <NewArrivals 
+      {/* 8. Accessories Collection */}
+      <Accessories 
         onAddToCart={onAddToCart}
-        setCurrentPage={setCurrentPage}
         setSelectedProduct={setSelectedProduct}
         theme={theme}
       />
