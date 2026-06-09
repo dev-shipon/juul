@@ -61,7 +61,8 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
       imgColor: "#18181B",
       tag: "Best Seller",
       desc: "Charge your JUUL device on the go. High-capacity battery case holds 1 JUUL device and 4 spare pods.",
-      image: "/deal-case.png"
+      image: "/deal-case.png",
+      inStock: false
     },
     {
       id: "juul-usb-dock",
@@ -106,7 +107,8 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
       imgColor: "#DC2626",
       tag: "Trending",
       desc: "Keep your JUUL safe and easily accessible with this anti-slip, shockproof silicone case sleeve and neck lanyard.",
-      image: "/cat-accessories.png"
+      image: "/cat-accessories.png",
+      inStock: false
     },
     {
       id: "juul-car-charger",
@@ -198,20 +200,30 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ delay: (i % accessoryProducts.length) * 0.1, duration: 0.5, ease: "easeOut" }}
-                  className={`group relative rounded-3xl border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 snap-center flex-shrink-0 w-[calc(100vw-48px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] ${
+                  className={`group relative rounded-3xl border overflow-hidden flex flex-col transition-all duration-300 snap-center flex-shrink-0 w-[calc(100vw-48px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] ${
+                    prod.inStock === false ? "opacity-65" : "hover:-translate-y-1.5"
+                  } ${
                     isLight
                       ? "bg-white border-zinc-200/80 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_36px_rgba(0,0,0,0.09)]"
                       : "bg-[#111112] border-white/[0.06] hover:border-white/10"
                   }`}
                 >
-                  {/* Discount badge */}
-                  {prod.discount && (
+                  {/* Stock/Discount badge */}
+                  {prod.inStock === false ? (
                     <div
-                      className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-white text-[10px] font-black uppercase tracking-wider shadow-md"
-                      style={{ backgroundColor: prod.imgColor }}
+                      className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-rose-600 text-white text-[10px] font-black uppercase tracking-wider shadow-md"
                     >
-                      -{prod.discount}% OFF
+                      STOCK OUT
                     </div>
+                  ) : (
+                    prod.discount && (
+                      <div
+                        className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-white text-[10px] font-black uppercase tracking-wider shadow-md"
+                        style={{ backgroundColor: prod.imgColor }}
+                      >
+                        -{prod.discount}% OFF
+                      </div>
+                    )
                   )}
 
                   {/* Rating Badge */}
@@ -230,7 +242,7 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
                     }`}
                   >
                     <motion.div
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={prod.inStock === false ? undefined : { scale: 1.05 }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
                       className="relative w-full h-full flex items-center justify-center p-5"
                     >
@@ -239,7 +251,7 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
                           src={prod.image}
                           alt={prod.name}
                           fill
-                          className="object-contain p-5 drop-shadow-md"
+                          className={`object-contain p-5 drop-shadow-md ${prod.inStock === false ? "grayscale opacity-50" : ""}`}
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
                       ) : (
@@ -253,8 +265,8 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
                   {/* Content */}
                   <div className="flex flex-col gap-3 p-5 flex-1 justify-between">
                     <div className="space-y-1.5 text-left">
-                      <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: prod.imgColor }}>
-                        ⚡ {prod.tag}
+                      <span className="text-[9px] font-black uppercase tracking-widest animate-pulse" style={{ color: prod.inStock === false ? "#6B7280" : prod.imgColor }}>
+                        {prod.inStock === false ? "⚠️ OUT OF STOCK" : `⚡ ${prod.tag}`}
                       </span>
                       <h3 
                         onClick={() => handleProductClick(prod)}
@@ -270,7 +282,7 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
                     {/* Pricing and Action row */}
                     <div className="space-y-3 text-left pt-2">
                       <div className="flex items-end flex-wrap gap-x-2 gap-y-1">
-                        <span className="text-2xl font-black" style={{ color: prod.imgColor }}>
+                        <span className="text-2xl font-black" style={{ color: prod.inStock === false ? "#6B7280" : prod.imgColor }}>
                           AED {prod.salePrice || prod.price}
                         </span>
                         {prod.originalPrice && (
@@ -282,15 +294,18 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
 
                       {/* CTA Button */}
                       <motion.button
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => onAddToCart && onAddToCart(prod)}
-                        className={`w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer border ${
-                          isLight
-                            ? "bg-zinc-950 border-zinc-950 text-white hover:bg-zinc-800"
-                            : "bg-white border-white text-zinc-950 hover:bg-zinc-100"
+                        whileTap={prod.inStock === false ? undefined : { scale: 0.95 }}
+                        onClick={() => prod.inStock !== false && onAddToCart && onAddToCart(prod)}
+                        disabled={prod.inStock === false}
+                        className={`w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-wider transition-all border ${
+                          prod.inStock === false
+                            ? "bg-zinc-100 border-zinc-200 text-zinc-400 dark:bg-zinc-900/50 dark:border-white/5 dark:text-zinc-600 cursor-not-allowed"
+                            : isLight
+                              ? "bg-zinc-950 border-zinc-950 text-white hover:bg-zinc-800 cursor-pointer"
+                              : "bg-white border-white text-zinc-950 hover:bg-zinc-100 cursor-pointer"
                         }`}
                       >
-                        <ShoppingBag className="w-3.5 h-3.5" /> ADD TO CART
+                        <ShoppingBag className="w-3.5 h-3.5" /> {prod.inStock === false ? "OUT OF STOCK" : "ADD TO CART"}
                       </motion.button>
                     </div>
                   </div>
