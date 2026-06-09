@@ -21,7 +21,7 @@ export default function BestSellers({ onAddToCart, setCurrentPage, setSelectedPr
           scrollRef.current.scrollBy({ left: 324, behavior: 'smooth' });
         }
       }
-    }, 1300);
+    }, 3000);
     return () => clearInterval(interval);
   }, [isPaused]);
 

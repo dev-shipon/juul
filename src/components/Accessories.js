@@ -21,7 +21,7 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
           scrollRef.current.scrollBy({ left: 340, behavior: "smooth" });
         }
       }
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [isPaused]);
 

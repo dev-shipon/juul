@@ -238,7 +238,7 @@ export default function FlashDeals({ theme, onAddToCart }) {
           scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
         }
       }
-    }, 1300);
+    }, 3000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
