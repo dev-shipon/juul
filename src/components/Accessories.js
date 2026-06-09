@@ -77,7 +77,7 @@ export default function Accessories({ onAddToCart, setSelectedProduct, theme }) 
       imgColor: "#3F3F46",
       tag: "Essential",
       desc: "Sleek, small, and cord-free magnetic USB charging dock. Get a full charge in under an hour from any USB port.",
-      image: "/cat-accessories.png"
+      image: "/juul1-charger.png"
     },
     {
       id: "juul-charging-cable",
