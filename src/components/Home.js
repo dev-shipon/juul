@@ -16,7 +16,7 @@ import Juul360Viewer from "./Juul360Viewer";
 import HappyClients from "./HappyClients";
 import FAQ from "./FAQ";
 import BlogSection from "./BlogSection";
-import OfficialTrust from "./OfficialTrust";
+import AuthorisedDealer from "./AuthorisedDealer";
 
 export default function Home({ 
   setCurrentPage, 
@@ -92,12 +92,11 @@ export default function Home({
       {/* 9. Happy Clients - Infinite Auto-Scroll Marquee */}
       <HappyClients theme={theme} />
 
-
       {/* 10. FAQ (Collapsible rows) */}
       <FAQ theme={theme} />
 
-      {/* 11. Official JUUL Trust Showcase */}
-      <OfficialTrust theme={theme} />
+      {/* 11. Official Authorized Dealer */}
+      <AuthorisedDealer theme={theme} />
 
       {/* 12. Blog / Journal Section (Right above Footer) */}
       <BlogSection theme={theme} />
