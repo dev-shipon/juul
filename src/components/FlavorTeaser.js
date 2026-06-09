@@ -13,7 +13,7 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % flavorsData[deviceFilter].length);
-    }, 1300);
+    }, 5000);
     return () => clearInterval(interval);
   }, [isPaused, deviceFilter]);
 
@@ -193,10 +193,10 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -50, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.55, ease: "easeInOut" }}
               className={`w-full h-full p-8 sm:p-12 rounded-3xl bg-gradient-to-br ${current.color} flex flex-col justify-between shadow-2xl relative overflow-hidden border ${
                 isLight ? "border-zinc-200/10" : "border-white/10"
               }`}
