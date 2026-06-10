@@ -85,7 +85,7 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
             <span className={`text-xl sm:text-2xl font-black tracking-[0.2em] transition-colors ${
               isLight ? "text-zinc-950 group-hover:text-blue-600" : "text-white group-hover:text-emerald-400"
             }`}>
-              JUUL
+              VAPE PODS
             </span>
             <span className={`w-1.5 h-1.5 rounded-full animate-ping ${
               isLight ? "bg-blue-600" : "bg-emerald-400"

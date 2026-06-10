@@ -43,7 +43,7 @@ export default function Footer({ setCurrentPage, theme }) {
           >
             <span className={`text-lg font-black tracking-[0.2em] transition-colors ${isLight ? "text-zinc-950 group-hover:text-blue-600" : "text-white group-hover:text-emerald-400"
               }`}>
-              JUUL
+              VAPE PODS
             </span>
             <span className={`w-1.5 h-1.5 rounded-full animate-ping ${isLight ? "bg-blue-600" : "bg-emerald-400"
               }`} />
@@ -286,7 +286,7 @@ export default function Footer({ setCurrentPage, theme }) {
         {/* Footer Bottom Info */}
         <div className="flex flex-col md:flex-row items-center justify-between text-xs text-zinc-500 gap-6">
           <p className="font-semibold text-center md:text-left">
-            Copyright © {new Date().getFullYear()} JUUL UAE. All rights reserved.
+            Copyright © {new Date().getFullYear()} Vape Pods UAE. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6 font-bold">

@@ -14,8 +14,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "JUUL Devices & Pods UAE | Buy Online Dubai",
-  description: "Shop authentic JUUL devices and pods in UAE. Fast delivery across Dubai, Sharjah, Abu Dhabi. Age 21+ only.",
+  title: "Vape Pods UAE | Buy Online Dubai",
+  description: "Shop authentic JUUL devices and pods in UAE at Vape Pods. Fast delivery across Dubai, Sharjah, Abu Dhabi. Age 21+ only.",
 };
 
 export default function RootLayout({ children }) {

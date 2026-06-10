@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-export default function ShopByCategory({ setCurrentPage, setCategoryFilter, theme }) {
+export default function ShopByCategory({ setCurrentPage, setCategoryFilter, setVersionFilter, theme }) {
   const isLight = theme === "light";
 
   const categories = [
     {
-      id: "kits",
-      title: "JUUL Devices",
-      desc: "Anodized premium hardware series",
-      itemsCount: "2 Models",
+      id: "juul1",
+      title: "Juul 1 Series",
+      desc: "Classic compact devices & signature pods",
+      itemsCount: "4 Products",
       image: "/cat-devices.png",
       accentColor: "#4B5563",
       cardBg: isLight
@@ -20,31 +20,25 @@ export default function ShopByCategory({ setCurrentPage, setCategoryFilter, them
         : "bg-gradient-to-br from-zinc-900 to-zinc-950 border-white/5",
     },
     {
-      id: "pods",
-      title: "JUUL Pods",
-      desc: "Signature handcrafted aroma blends",
-      itemsCount: "8 Flavors",
+      id: "juul2",
+      title: "Juul 2 Series",
+      desc: "Smart next-gen technology & enhanced flavors",
+      itemsCount: "8 Products",
       image: "/cat-pods.png",
       accentColor: "#10B981",
       cardBg: isLight
         ? "bg-gradient-to-br from-emerald-50/60 to-zinc-100 border-emerald-100"
         : "bg-gradient-to-br from-emerald-950/30 to-zinc-950 border-emerald-900/20",
     },
-    {
-      id: "accessories",
-      title: "Accessories",
-      desc: "Magnetic docks and bespoke carry cases",
-      itemsCount: "2 Items",
-      image: "/cat-accessories.png",
-      accentColor: "#B45309",
-      cardBg: isLight
-        ? "bg-gradient-to-br from-amber-50/60 to-zinc-100 border-amber-100"
-        : "bg-gradient-to-br from-amber-950/20 to-zinc-950 border-amber-900/20",
-    },
   ];
 
   const handleCategoryClick = (catId) => {
-    setCategoryFilter(catId);
+    if (catId === "juul1" || catId === "juul2") {
+      setVersionFilter?.(catId);
+      setCategoryFilter?.("all");
+    } else {
+      setCategoryFilter?.(catId);
+    }
     setCurrentPage("collection");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -76,7 +70,7 @@ export default function ShopByCategory({ setCurrentPage, setCategoryFilter, them
         </motion.div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.id}
