@@ -1,0 +1,251 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Droplet, ShoppingCart, Check, Zap } from "lucide-react";
+import { useState } from "react";
+
+const FLAVORS = [
+  {
+    id: "juul2-apple",
+    name: "Ruby Sunset",
+    note: "Crisp Red Apple",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#EF4444",
+    liquidColor: "rgba(239, 68, 68, 0.18)",
+    price: 17.99,
+  },
+  {
+    id: "juul2-mango",
+    name: "Summer Gold",
+    note: "Tropical Mango",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#F59E0B",
+    liquidColor: "rgba(245, 158, 11, 0.18)",
+    price: 17.99,
+  },
+  {
+    id: "juul2-polar-mint",
+    name: "Polar Mint",
+    note: "Spearmint Ice",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#10B981",
+    liquidColor: "rgba(16, 185, 129, 0.15)",
+    price: 17.99,
+  },
+  {
+    id: "juul2-blackcurrant",
+    name: "Blackcurrant",
+    note: "Rich Wild Berry",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#EC4899",
+    liquidColor: "rgba(236, 72, 153, 0.18)",
+    price: 18.99,
+  },
+  {
+    id: "juul2-crisp-menthol",
+    name: "Crisp Menthol",
+    note: "Arctic Ice Punch",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#06B6D4",
+    liquidColor: "rgba(6, 182, 212, 0.15)",
+    price: 17.99,
+  },
+  {
+    id: "juul2-virginia-tobacco",
+    name: "Virginia Tobacco",
+    note: "Bold American Leaf",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#78716C",
+    liquidColor: "rgba(120, 113, 108, 0.18)",
+    price: 17.99,
+  },
+  {
+    id: "juul2-autumn-gold",
+    name: "Autumn Gold",
+    note: "Spiced Apple Tobacco",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#B45309",
+    liquidColor: "rgba(180, 83, 9, 0.18)",
+    price: 18.99,
+  }
+];
+
+export default function Juul2Flavors({ theme, onAddToCart }) {
+  const isLight = theme === "light";
+  const [addedId, setAddedId] = useState(null);
+
+  const handleBuy = (flavor) => {
+    const productAdapter = {
+      id: flavor.id,
+      name: `JUUL 2 Pods - ${flavor.name} (${flavor.note})`,
+      price: flavor.price,
+      image: "/cat-pods.png",
+      category: "pods",
+      version: "juul2"
+    };
+    onAddToCart(productAdapter);
+    setAddedId(flavor.id);
+    setTimeout(() => setAddedId(null), 2000);
+  };
+
+  return (
+    <section className={`py-20 border-y transition-colors duration-500 relative overflow-hidden ${
+      isLight ? "bg-zinc-150/40 border-zinc-200" : "bg-[#080809] border-white/5"
+    }`}>
+      {/* Background Ornaments */}
+      <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
+        <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[130px] ${isLight ? "bg-blue-200" : "bg-blue-900/10"}`}></div>
+        <div className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[100px] ${isLight ? "bg-emerald-100" : "bg-emerald-950/10"}`}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+        
+        {/* ── Heading ── */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-white/50 dark:bg-white/[0.02] backdrop-blur-sm">
+            <Droplet className="w-3.5 h-3.5 text-blue-500" />
+            <span className={`text-[10px] font-black uppercase tracking-widest ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
+              Compatibility Specs
+            </span>
+          </div>
+          <h2 className={`text-3xl sm:text-5xl font-black tracking-tight leading-tight ${isLight ? "text-zinc-950" : "text-white"}`}>
+            Fully Compatible With <br className="hidden xs:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400">
+              JUUL 2 PODS
+            </span>
+          </h2>
+          <p className={`text-xs sm:text-sm max-w-2xl mx-auto font-light leading-relaxed ${isLight ? "text-zinc-650" : "text-zinc-450"}`}>
+            All JUUL 2 devices are engineered to connect exclusively with genuine JUUL 2 pods. 
+            Enjoy a smoother throat hit, child-safety locking, and automatic nicotine tracking technology.
+          </p>
+        </div>
+
+        {/* ── Pods Grid Layout (Inspired by XROS grid) ── */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {FLAVORS.map((flavor, index) => {
+            const isAdded = addedId === flavor.id;
+            return (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                key={flavor.id}
+                className={`group flex flex-col justify-between rounded-3xl p-4 sm:p-6 border transition-all duration-300 relative overflow-hidden ${
+                  isLight 
+                    ? "bg-white border-zinc-200 hover:border-zinc-300 hover:shadow-lg hover:shadow-zinc-200/50" 
+                    : "bg-[#121214] border-white/5 hover:border-white/10 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
+                }`}
+              >
+                {/* Top spec tag */}
+                <div className="text-center mb-6">
+                  <span className={`text-[9px] font-black uppercase tracking-wider ${isLight ? "text-zinc-400" : "text-zinc-500"}`}>
+                    {flavor.pack}
+                  </span>
+                  <div className={`h-[1px] w-8 mx-auto mt-2 bg-gradient-to-r ${isLight ? "from-zinc-200 to-zinc-300" : "from-white/5 to-white/10"}`} />
+                </div>
+
+                {/* ── High-Fidelity CSS JUUL 2 Pod ── */}
+                <div className="h-44 flex items-center justify-center relative mb-6">
+                  <div className="relative w-16 h-36 flex flex-col items-center group-hover:scale-105 transition-transform duration-500">
+                    {/* Pod Mouthpiece */}
+                    <div className="w-12 h-10 bg-[#161618] rounded-t-lg relative flex items-center justify-center shadow-md">
+                      {/* Air hole cutout */}
+                      <div className="w-4 h-1 rounded-full bg-black" />
+                      {/* Color-coded flavor stripe at bottom of mouthpiece */}
+                      <div 
+                        className="absolute bottom-0 left-0 right-0 h-1.5 shadow-inner" 
+                        style={{ backgroundColor: flavor.color }}
+                      />
+                    </div>
+
+                    {/* Transparent E-Liquid Pod Tank */}
+                    <div className="w-11 h-20 bg-zinc-900/40 dark:bg-zinc-800/20 border-x border-b border-white/10 relative backdrop-blur-xs flex flex-col justify-end overflow-hidden">
+                      {/* Liquid representation inside */}
+                      <div 
+                        className="w-full h-[80%] rounded-b-sm transition-all duration-500 relative"
+                        style={{ 
+                          backgroundColor: flavor.liquidColor,
+                          boxShadow: `inset 0 -15px 30px ${flavor.color}10`
+                        }}
+                      >
+                        {/* Tiny bubbles inside juice */}
+                        <div className="absolute bottom-2 left-2 w-1 h-1 rounded-full bg-white/20" />
+                        <div className="absolute top-4 right-3 w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" />
+                      </div>
+
+                      {/* Silver metal center air tube */}
+                      <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-2 bg-gradient-to-r from-zinc-400 via-zinc-200 to-zinc-500 opacity-60" />
+
+                      {/* Small Heating Coil representation */}
+                      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-4 h-3 bg-zinc-650 rounded-xs flex flex-col justify-center items-center opacity-70">
+                        <div className="w-2.5 h-[1px] bg-zinc-400" />
+                        <div className="w-2 h-[1px] bg-zinc-400 mt-0.5" />
+                      </div>
+                    </div>
+
+                    {/* Metallic Gold Connector Base */}
+                    <div className="w-9 h-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 rounded-b-xs flex justify-around px-2 py-0.5 shadow-sm">
+                      <div className="w-1.5 h-full bg-zinc-900/60 rounded-full" />
+                      <div className="w-1.5 h-full bg-zinc-900/60 rounded-full" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── Title, Flavor and Price ── */}
+                <div className="text-center space-y-1">
+                  <h3 className={`text-base font-black ${isLight ? "text-zinc-950" : "text-white"}`}>
+                    {flavor.name}
+                  </h3>
+                  <p className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-emerald-400 dark:to-teal-300">
+                    {flavor.note}
+                  </p>
+                  <p className={`text-[10px] font-bold ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
+                    Strength: {flavor.strength}
+                  </p>
+                  <p className={`text-sm font-black pt-2 ${isLight ? "text-zinc-900" : "text-zinc-100"}`}>
+                    ${flavor.price}
+                  </p>
+                </div>
+
+                {/* ── Buy Button (Framer-Motion Interactive) ── */}
+                <div className="mt-5">
+                  <button
+                    onClick={() => handleBuy(flavor)}
+                    disabled={isAdded}
+                    className={`w-full py-2.5 rounded-full font-black text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
+                      isAdded
+                        ? "bg-emerald-500 text-white cursor-default"
+                        : isLight
+                        ? "bg-zinc-950 hover:bg-zinc-800 text-white shadow-md shadow-zinc-950/10"
+                        : "bg-white text-zinc-950 hover:bg-zinc-100 shadow-md shadow-black/30"
+                    }`}
+                  >
+                    {isAdded ? (
+                      <>
+                        <Check className="w-3.5 h-3.5" /> Added
+                      </>
+                    ) : (
+                      <>
+                        <ShoppingCart className="w-3.5 h-3.5" /> Add to Cart
+                      </>
+                    )}
+                  </button>
+                </div>
+
+              </motion.div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

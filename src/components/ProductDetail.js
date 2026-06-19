@@ -12,6 +12,8 @@ import ProductFeatures from "./ProductFeatures";
 import ProductRichDescription from "./ProductRichDescription";
 import ProductTechSpecs from "./ProductTechSpecs";
 import FAQ from "./FAQ";
+import AppIntegration from "./AppIntegration";
+import Juul2Flavors from "./Juul2Flavors";
 
 export default function ProductDetail({ selectedProduct, onAddToCart, setCurrentPage, theme }) {
   const isLight = theme === "light";
@@ -500,6 +502,17 @@ export default function ProductDetail({ selectedProduct, onAddToCart, setCurrent
           product={product} 
           theme={theme} 
         />
+
+        {/* Compatible Pods/Flavors Grid (JUUL 2 Exclusive Section) */}
+        {product.version === "juul2" && (
+          <Juul2Flavors theme={theme} onAddToCart={onAddToCart} />
+        )}
+
+
+        {/* Companion App Integration Features (JUUL 2 Exclusive Section) */}
+        {product.version === "juul2" && (
+          <AppIntegration theme={theme} />
+        )}
 
         {/* You May Also Like Suggestions */}
         <ProductRecommendations
