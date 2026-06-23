@@ -5,11 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Home from "@/components/Home";
 import Collection from "@/components/Collection";
+import Juul1Collection from "@/components/Juul1Collection";
 import ProductDetail from "@/components/ProductDetail";
 import Checkout from "@/components/Checkout";
 import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import FloatingSocials from "@/components/FloatingSocials";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 
 export default function MainApp() {
   const [currentPage, _setCurrentPage] = useState("home");
@@ -23,7 +26,7 @@ export default function MainApp() {
   const [isLoading, setIsLoading] = useState(true);
 
   const setCurrentPage = (page) => {
-    if (["home", "collection", "product", "checkout"].includes(page)) {
+    if (["home", "collection", "juul1", "product", "checkout", "about", "contact"].includes(page)) {
       _setCurrentPage(page);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
@@ -88,6 +91,16 @@ export default function MainApp() {
             key="collection"
           />
         );
+      case "juul1":
+        return (
+          <Juul1Collection
+            onAddToCart={handleAddToCart}
+            setCurrentPage={setCurrentPage}
+            setSelectedProduct={setSelectedProduct}
+            theme={theme}
+            key="juul1"
+          />
+        );
       case "product":
         return (
           <ProductDetail
@@ -108,6 +121,10 @@ export default function MainApp() {
             key="checkout"
           />
         );
+      case "about":
+        return <About theme={theme} key="about" />;
+      case "contact":
+        return <Contact theme={theme} key="contact" />;
       default:
         return <Home setCurrentPage={setCurrentPage} theme={theme} key="home" />;
     }

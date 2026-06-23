@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Star, Filter, Heart, Eye, BookOpen, Award, Droplet, Layers, Shield, Search, Smartphone, Info, AlertCircle, ThumbsUp, CheckCircle, Zap, ChevronLeft, ChevronRight } from "lucide-react";
 import FAQ from "./FAQ";
 
-export default function Collection({ onAddToCart, setCurrentPage, setSelectedProduct, theme, activeCategory = "all", setActiveCategory, versionFilter = "all", setVersionFilter }) {
+export default function Juul1Collection({ onAddToCart, setCurrentPage, setSelectedProduct, theme, activeCategory = "all", setActiveCategory, versionFilter = "all", setVersionFilter }) {
 
   const flavorScrollRef = useRef(null);
 
@@ -29,164 +29,109 @@ export default function Collection({ onAddToCart, setCurrentPage, setSelectedPro
   ];
 
   const products = [
-    // JUUL 2 Series (Enhanced smart device & many flavors!)
     {
-      id: "juul2-device",
-      name: "JUUL 2 Device Kit - Slate Grey",
+      id: "juul1-slate",
+      name: "JUUL 1 Device Kit - Slate Grey",
       category: "kits",
-      version: "juul2",
-      price: 29.99,
-      rating: 5.0,
-      reviewsCount: 194,
-      imgColor: "#1E1E20",
-      flavor: "classic",
-      tag: "Smart Gen 2",
-      desc: "Enhanced vapor draw, massive battery, and dynamic smart LED indicators."
-    },
-    {
-      id: "juul2-ruby-kit",
-      name: "JUUL 2 Starter Kit - Ruby Edition",
-      category: "kits",
-      version: "juul2",
-      price: 34.99,
-      rating: 4.9,
-      reviewsCount: 88,
-      imgColor: "#E11D48",
-      flavor: "berry",
-      tag: "Premium Kit",
-      desc: "Ruby Red anodized device with dual-pack dynamic starter pods."
-    },
-    {
-      id: "juul2-apple",
-      name: "JUUL 2 Pods - Ruby Sunset (Crisp Apple)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
-      rating: 4.9,
-      reviewsCount: 228,
-      imgColor: "#EF4444",
-      flavor: "berry",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods with crisp red apple aroma and juicy finish."
-    },
-    {
-      id: "juul2-mango",
-      name: "JUUL 2 Pods - Summer Gold (Tropical Mango)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
-      rating: 4.8,
-      reviewsCount: 312,
-      imgColor: "#F59E0B",
-      flavor: "mango",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods featuring rich tropical sun-ripened mango."
-    },
-    {
-      id: "juul2-polar-mint",
-      name: "JUUL 2 Pods - Polar Mint (Spearmint Ice)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
-      rating: 4.9,
-      reviewsCount: 295,
-      imgColor: "#10B981",
-      flavor: "mint",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods with intense spearmint and arctic cooling frost."
-    },
-    {
-      id: "juul2-blackcurrant",
-      name: "JUUL 2 Pods - Blackcurrant (Rich Berry)",
-      category: "pods",
-      version: "juul2",
-      price: 18.99,
-      rating: 4.7,
-      reviewsCount: 110,
-      imgColor: "#EC4899",
-      flavor: "berry",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods with juicy blackcurrant and wild forest berries."
-    },
-    {
-      id: "juul2-crisp-menthol",
-      name: "JUUL 2 Pods - Crisp Menthol (Ice Punch)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
-      rating: 4.8,
-      reviewsCount: 156,
-      imgColor: "#06B6D4",
-      flavor: "menthol",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods delivering an extra punch of clean arctic menthol."
-    },
-    {
-      id: "juul2-virginia-tobacco",
-      name: "JUUL 2 Pods - Virginia Tobacco (Bold)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
-      rating: 4.7,
-      reviewsCount: 178,
-      imgColor: "#78716C",
-      flavor: "classic",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods with full-bodied toasted tobacco leaves flavor."
-    },
-    {
-      id: "juul2-autumn-gold",
-      name: "JUUL 2 Pods - Autumn Gold (Spiced)",
-      category: "pods",
-      version: "juul2",
-      price: 18.99,
-      rating: 4.6,
-      reviewsCount: 75,
-      imgColor: "#B45309",
-      flavor: "classic",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods with sweet spiced notes and rich tobacco finish."
-    },
-    {
-      id: "juul2-ruby-menthol",
-      name: "JUUL 2 Pods - Ruby Menthol (Berry Ice)",
-      category: "pods",
-      version: "juul2",
-      price: 17.99,
+      version: "juul1",
+      price: 24.99,
       rating: 4.8,
       reviewsCount: 142,
-      imgColor: "#BE123C",
-      flavor: "menthol",
-      tag: "Many Flavors",
-      desc: "Pack of 2 genuine pods combining wild berry sweetness with an arctic menthol blast."
+      imgColor: "#4B5563",
+      flavor: "classic",
+      tag: "Original Classic",
+      desc: "Anodized metal body with signature rapid USB magnetic charging."
     },
-
-    // Premium Accessories
     {
-      id: "juul2-charging-dock",
-      name: "JUUL 2 Fast Charging Dock",
-      category: "accessories",
-      version: "juul2",
-      price: 12.99,
+      id: "juul1-silver",
+      name: "JUUL 1 Device Kit - Silver",
+      category: "kits",
+      version: "juul1",
+      price: 24.99,
+      rating: 4.9,
+      reviewsCount: 89,
+      imgColor: "#9CA3AF",
+      flavor: "classic",
+      tag: "Limited Edition",
+      desc: "Sleek silver finish with the classic JUUL 1 performance."
+    },
+    {
+      id: "juul1-mint",
+      name: "JUUL 1 Pod Pack - Cool Mint",
+      category: "pods",
+      version: "juul1",
+      price: 15.99,
+      rating: 4.9,
+      reviewsCount: 310,
+      imgColor: "#10B981",
+      flavor: "mint",
+      tag: "Signature Blend",
+      desc: "Pack of 4 pre-filled pods containing crisp peppermint frost."
+    },
+    {
+      id: "juul1-mango",
+      name: "Mango JUUL 1 Pods",
+      category: "pods",
+      version: "juul1",
+      price: 16.99,
+      rating: 4.9,
+      reviewsCount: 420,
+      imgColor: "#F59E0B",
+      flavor: "mango",
+      tag: "Fan Favorite",
+      desc: "Pack of 4 pre-filled pods with the legendary rich mango flavor."
+    },
+    {
+      id: "juul1-tobacco",
+      name: "Virginia Tobacco JUUL 1 Pods",
+      category: "pods",
+      version: "juul1",
+      price: 15.99,
       rating: 4.8,
-      reviewsCount: 115,
-      imgColor: "#1E1E20",
+      reviewsCount: 188,
+      imgColor: "#78716C",
+      flavor: "classic",
+      tag: "Rich Taste",
+      desc: "Pack of 4 pre-filled pods with classic robust American tobacco."
+    },
+    {
+      id: "juul1-menthol",
+      name: "Classic Menthol JUUL 1 Pods",
+      category: "pods",
+      version: "juul1",
+      price: 15.99,
+      rating: 4.7,
+      reviewsCount: 95,
+      imgColor: "#06B6D4",
+      flavor: "menthol",
+      tag: "Traditional Ice",
+      desc: "Pack of 4 pre-filled pods with crisp icy traditional menthol."
+    },
+    {
+      id: "juul1-fruit",
+      name: "Fruit Medley JUUL 1 Pods",
+      category: "pods",
+      version: "juul1",
+      price: 15.99,
+      rating: 4.6,
+      reviewsCount: 135,
+      imgColor: "#EF4444",
+      flavor: "berry",
+      tag: "Sweet Blend",
+      desc: "Pack of 4 pre-filled pods featuring a mix of peaches, grapes, and berries."
+    },
+    {
+      id: "usb-dock",
+      name: "Magnetic USB Charging Dock",
+      category: "accessories",
+      version: "juul1",
+      price: 9.99,
+      rating: 4.6,
+      reviewsCount: 64,
+      imgColor: "#374151",
       flavor: "classic",
       tag: "Original Accessories",
-      desc: "Magnetic fast-charging USB dock specifically designed for the JUUL 2 device."
-    },
-    {
-      id: "carry-case",
-      name: "Tactical Leather Carrying Case",
-      category: "accessories",
-      version: "juul2",
-      price: 19.99,
-      rating: 4.9,
-      reviewsCount: 52,
-      imgColor: "#78350F",
-      flavor: "classic",
-      tag: "Bespoke Carry",
-      desc: "Handcrafted, shockproof carrying case for device and pods."
+      desc: "Compact wireless USB dock to charge your JUUL 1 anywhere."
     }
   ];
 
@@ -219,12 +164,12 @@ export default function Collection({ onAddToCart, setCurrentPage, setSelectedPro
             <span className={`text-xs font-bold uppercase tracking-widest ${
               isLight ? "text-blue-600" : "text-emerald-400"
             }`}>
-              Curated Catalog
+              The Original Classic
             </span>
             <h1 className={`text-3xl sm:text-5xl font-extrabold tracking-tight mt-2 ${
               isLight ? "text-zinc-950" : "text-white"
             }`}>
-              Premium Collections
+              JUUL 1 Collections
             </h1>
           </div>
 
@@ -247,25 +192,21 @@ export default function Collection({ onAddToCart, setCurrentPage, setSelectedPro
                    <span className="text-[6px] uppercase tracking-widest mt-0.5 opacity-90">Authentic</span>
                  </motion.div>
 
-                 {/* JUUL 2 Device CSS Model */}
-                 <div className="relative w-14 h-36 rounded-xl bg-gradient-to-b from-[#333] to-[#111] shadow-2xl border border-white/10 flex flex-col items-center">
-                   {/* Pod */}
-                   <div className="absolute -top-6 w-12 h-8 bg-zinc-900 rounded-t-lg border-x border-t border-zinc-700 flex justify-center overflow-hidden">
-                     <div className="w-full h-full bg-gradient-to-b from-red-500/20 to-transparent" />
+                 {/* JUUL 1 Device CSS Model */}
+                 <div className="relative w-12 h-40 rounded bg-[#333] shadow-2xl border border-white/10 flex flex-col items-center">
+                   {/* Pod with V-shape bottom */}
+                   <div className="absolute -top-6 w-12 h-10 bg-zinc-900 border-x border-t border-zinc-700 flex flex-col overflow-hidden items-center">
+                     <div className="w-full h-8 bg-gradient-to-b from-amber-500/20 to-transparent" />
+                     <div className="w-0 h-0 border-l-[24px] border-l-transparent border-r-[24px] border-r-transparent border-t-[8px] border-t-zinc-900" />
                    </div>
                    
-                   {/* Body Details - LED Lights */}
-                   <div className="absolute bottom-10 w-full px-2 flex justify-center">
-                     <div className="w-3 h-12 rounded-full bg-black/60 flex flex-col justify-center items-center gap-1.5 py-1">
-                       <div className="w-1 h-1 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,1)]" />
-                       <div className="w-1 h-1 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,1)]" />
-                       <div className="w-1 h-1 rounded-full bg-white/20" />
-                       <div className="w-1 h-1 rounded-full bg-white/20" />
-                     </div>
+                   {/* Body Details - Single LED Light */}
+                   <div className="absolute top-10 w-full flex justify-center">
+                     <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,1)]" />
                    </div>
 
                    {/* Logo */}
-                   <div className="absolute bottom-3 font-black text-[6px] text-zinc-500 tracking-widest uppercase">JUUL</div>
+                   <div className="absolute bottom-6 font-black text-[8px] text-zinc-500 tracking-widest uppercase">JUUL</div>
                  </div>
                  
                  {/* Background Glow */}
@@ -488,7 +429,7 @@ export default function Collection({ onAddToCart, setCurrentPage, setSelectedPro
               </div>
               <div className={`space-y-6 text-lg leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
                 <p>
-                  Welcome to our premium collection of vapes, pods, and starter kits. Navigating the world of vaping can be overwhelming, but we’ve structured our catalog to make your shopping experience seamless. Whether you're a beginner looking for a simple <strong className={isLight ? "text-zinc-900" : "text-white"}>Classic kit</strong> or an experienced user upgrading to the <strong className={isLight ? "text-zinc-900" : "text-white"}>Smart Device Series</strong>, our collection guide ensures you find exactly what you need.
+                  Welcome to our premium collection of vapes, pods, and starter kits. Navigating the world of vaping can be overwhelming, but we’ve structured our catalog to make your shopping experience seamless. Whether you're a beginner looking for a simple <strong className={isLight ? "text-zinc-900" : "text-white"}>Classic kit</strong> or an experienced user upgrading to the <strong className={isLight ? "text-zinc-900" : "text-white"}>Original Series</strong>, our collection guide ensures you find exactly what you need.
                 </p>
                 <p>
                   At VapePod UAE, we source only <strong className={isLight ? "text-zinc-900" : "text-white"}>100% genuine products</strong> directly from authorized manufacturers. Our hand-picked selection guarantees optimal vapor consistency, unmatched flavor profiles, and top-tier battery safety. Each product in our catalog undergoes strict quality checks before making it to our shelves.
@@ -681,7 +622,7 @@ export default function Collection({ onAddToCart, setCurrentPage, setSelectedPro
                     <tr className={`border-b ${isLight ? "border-zinc-200 bg-zinc-50" : "border-white/10 bg-white/5"}`}>
                       <th className="p-6 font-bold">Feature</th>
                       <th className="p-6 font-bold">JUUL 1 Classic</th>
-                      <th className="p-6 font-bold">JUUL 2 Series</th>
+                      <th className="p-6 font-bold">Original Series</th>
                     </tr>
                   </thead>
                   <tbody>

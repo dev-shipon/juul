@@ -30,17 +30,12 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
 
   const handleNavClick = (itemId) => {
     if (itemId === "about") {
-      if (currentPage !== "home") {
-        setCurrentPage("home");
-        setTimeout(() => {
-          const element = document.getElementById("features");
-          if (element) element.scrollIntoView({ behavior: "smooth" });
-        }, 150);
-      } else {
-        const element = document.getElementById("features");
-        if (element) element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else if (itemId === "contact" || itemId === "wholesale") {
+      setCurrentPage("about");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (itemId === "contact") {
+      setCurrentPage("contact");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (itemId === "wholesale") {
       if (currentPage !== "home") {
         setCurrentPage("home");
         setTimeout(() => {
@@ -52,8 +47,7 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
         if (element) element.scrollIntoView({ behavior: "smooth" });
       }
     } else if (itemId === "juul1") {
-      setVersionFilter("juul1");
-      setCurrentPage("collection");
+      setCurrentPage("juul1");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (itemId === "juul2") {
       setVersionFilter("juul2");
@@ -66,7 +60,7 @@ export default function Navbar({ currentPage, setCurrentPage, cartCount, setIsCa
 
   const isItemActive = (itemId) => {
     if (itemId === "juul1") {
-      return currentPage === "collection" && versionFilter === "juul1";
+      return currentPage === "juul1";
     }
     if (itemId === "juul2") {
       return currentPage === "collection" && versionFilter === "juul2";

@@ -192,17 +192,17 @@ export default function Footer({ setCurrentPage, theme }) {
           </h4>
           <ul className="space-y-2 text-xs font-semibold">
             {[
-              { name: "JUUL 2 Devices" },
-              { name: "JUUL 2 Pods" },
-              { name: "JUUL 1 Devices" },
-              { name: "JUUL 1 Pods" },
-              { name: "Starter Kits" },
-              { name: "All Products" }
+              { name: "JUUL 2 Devices", page: "collection" },
+              { name: "JUUL 2 Pods", page: "collection" },
+              { name: "JUUL 1 Devices", page: "juul1" },
+              { name: "JUUL 1 Pods", page: "juul1" },
+              { name: "Starter Kits", page: "collection" },
+              { name: "All Products", page: "collection" }
             ].map((item, idx) => (
               <li key={idx}>
                 <button
                   onClick={() => {
-                    setCurrentPage("collection");
+                    setCurrentPage(item.page);
                     window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className={`transition-colors cursor-pointer block w-full text-left ${isLight ? "hover:text-blue-600 text-zinc-500" : "hover:text-emerald-400 text-zinc-450"}`}
