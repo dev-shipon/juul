@@ -9,6 +9,7 @@ const FLAVORS = [
     id: "juul2-apple",
     name: "Ruby Sunset",
     note: "Crisp Red Apple",
+    description: "Experience a refreshing burst of crisp, sweet red apples. This flavor perfectly balances a juicy fruitiness with a smooth, satisfying vapor draw on every puff.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#EF4444",
@@ -19,6 +20,7 @@ const FLAVORS = [
     id: "juul2-mango",
     name: "Summer Gold",
     note: "Tropical Mango",
+    description: "A vibrant and juicy tropical mango sweetness that transports you to summer. Enjoy a rich, full-bodied exotic taste with a clean and mellow finish.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#F59E0B",
@@ -29,6 +31,7 @@ const FLAVORS = [
     id: "juul2-polar-mint",
     name: "Polar Mint",
     note: "Spearmint Ice",
+    description: "An incredibly icy, cooling spearmint flavor designed for maximum freshness. It delivers a frosty throat hit leaving your senses invigorated all day.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#10B981",
@@ -39,6 +42,7 @@ const FLAVORS = [
     id: "juul2-blackcurrant",
     name: "Blackcurrant",
     note: "Rich Wild Berry",
+    description: "Indulge in deep, rich wild berry notes combined with a dark, sweet undertone. This robust flavor provides a uniquely smooth and lingering berry aftertaste.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#EC4899",
@@ -49,6 +53,7 @@ const FLAVORS = [
     id: "juul2-crisp-menthol",
     name: "Crisp Menthol",
     note: "Arctic Ice Punch",
+    description: "A brisk and intense arctic menthol blast for those who love pure, unadulterated ice. It hits sharp and clean, offering the ultimate freezing sensation.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#06B6D4",
@@ -59,6 +64,7 @@ const FLAVORS = [
     id: "juul2-virginia-tobacco",
     name: "Virginia Tobacco",
     note: "Bold American Leaf",
+    description: "The classic, rich, and bold taste of premium Virginia tobacco leaves. Carefully blended to emulate the authentic warmth of traditional smoking.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#78716C",
@@ -69,11 +75,23 @@ const FLAVORS = [
     id: "juul2-autumn-gold",
     name: "Autumn Gold",
     note: "Spiced Apple Tobacco",
+    description: "A masterfully smooth blend of earthy tobacco mixed with warm, spiced apple notes. Perfect for winding down with a comforting, slightly sweet aroma.",
     strength: "18 mg/ml",
     pack: "2 Pods per Pack",
     color: "#B45309",
     liquidColor: "rgba(180, 83, 9, 0.18)",
     price: 18.99,
+  },
+  {
+    id: "juul2-blonde-tobacco",
+    name: "Blonde Tobacco",
+    note: "Mellow American Blend",
+    description: "A remarkably smooth, light, and mellow tobacco taste. Ideal for vapers seeking a subtle, less intense tobacco flavor with a refined, airy finish.",
+    strength: "18 mg/ml",
+    pack: "2 Pods per Pack",
+    color: "#D97706",
+    liquidColor: "rgba(217, 119, 6, 0.18)",
+    price: 17.99,
   }
 ];
 
@@ -200,44 +218,22 @@ export default function Juul2Flavors({ theme, onAddToCart }) {
                 </div>
 
                 {/* ── Title, Flavor and Price ── */}
-                <div className="text-center space-y-1">
+                <div className="text-center space-y-1.5 flex-grow flex flex-col justify-end">
                   <h3 className={`text-base font-black ${isLight ? "text-zinc-950" : "text-white"}`}>
                     {flavor.name}
                   </h3>
                   <p className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-emerald-400 dark:to-teal-300">
                     {flavor.note}
                   </p>
+                  <p className={`text-[11px] font-medium italic leading-relaxed py-1.5 px-2 ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
+                    "{flavor.description}"
+                  </p>
                   <p className={`text-[10px] font-bold ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
                     Strength: {flavor.strength}
                   </p>
-                  <p className={`text-sm font-black pt-2 ${isLight ? "text-zinc-900" : "text-zinc-100"}`}>
+                  <p className={`text-sm font-black pt-1 ${isLight ? "text-zinc-900" : "text-zinc-100"}`}>
                     ${flavor.price}
                   </p>
-                </div>
-
-                {/* ── Buy Button (Framer-Motion Interactive) ── */}
-                <div className="mt-5">
-                  <button
-                    onClick={() => handleBuy(flavor)}
-                    disabled={isAdded}
-                    className={`w-full py-2.5 rounded-full font-black text-[10px] uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all duration-300 cursor-pointer ${
-                      isAdded
-                        ? "bg-emerald-500 text-white cursor-default"
-                        : isLight
-                        ? "bg-zinc-950 hover:bg-zinc-800 text-white shadow-md shadow-zinc-950/10"
-                        : "bg-white text-zinc-950 hover:bg-zinc-100 shadow-md shadow-black/30"
-                    }`}
-                  >
-                    {isAdded ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" /> Added
-                      </>
-                    ) : (
-                      <>
-                        <ShoppingCart className="w-3.5 h-3.5" /> Add to Cart
-                      </>
-                    )}
-                  </button>
                 </div>
 
               </motion.div>

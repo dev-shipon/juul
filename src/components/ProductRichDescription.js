@@ -121,7 +121,7 @@ export default function ProductRichDescription({ product, theme }) {
               </div>
             </div>
 
-            {/* ═══ SECTION 1: POD ALIGNMENT ═══ */}
+            {/* ═══ SECTION 1: JUUL POD SPECIFICATION ═══ */}
       <motion.div 
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
         variants={containerVariants}
@@ -130,129 +130,37 @@ export default function ProductRichDescription({ product, theme }) {
         <div className="lg:col-span-7 space-y-6">
           <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border border-blue-500/20">
             <Sparkles className="w-4 h-4 text-blue-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-blue-600 dark:text-blue-400">Seamless Connection</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-blue-600 dark:text-blue-400">Advanced Anatomy</span>
           </motion.div>
           
           <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
-            Precision <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">Pod Alignment</span>
+            JUUL Pod <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-400">Specification</span>
           </motion.h3>
           
           <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
-            Line up the pod with the battery opening for a flawless fit every time. The device features an advanced e-liquid chamber and internal heating post, secured by a solid teal base cap. With gold-plated contacts and a precise internal connection pin system, you are guaranteed a consistent draw with zero power loss.
-          </motion.p>
-          
-          <motion.div variants={textItemVariants} className="space-y-3 pt-2">
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center">
-                <CheckSquare className="w-3.5 h-3.5 text-blue-500" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Ergonomic Black Mouthguard</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center">
-                <CheckSquare className="w-3.5 h-3.5 text-blue-500" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Central Indicator Light System</span>
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div variants={imageContainerVariants} className="lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
-          <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
-            <Image src="/media__1781699602201.png" alt="Pod Alignment" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
-          </div>
-        </motion.div>
-      </motion.div>
-
-      {/* ═══ SECTION 2: POD COIL ═══ */}
-      <motion.div 
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
-        variants={containerVariants}
-        className={`${cardClassName} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center lg:flex-row-reverse`}
-      >
-        <motion.div variants={imageContainerVariants} className="lg:col-span-5 lg:order-last h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
-          <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
-            <Image src="/media__1781699607043.png" alt="Pod Coil" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
-          </div>
-        </motion.div>
-
-        <div className="lg:col-span-7 space-y-6">
-          <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500/10 to-rose-500/10 border border-orange-500/20">
-            <Zap className="w-4 h-4 text-orange-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-orange-600 dark:text-orange-400">Heating Technology</span>
-          </motion.div>
-          
-          <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
-            Internal Pod Coil <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500">Technical Demo</span>
-          </motion.h3>
-          
-          <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
-            The heart of the experience lies in the 1.6-OHM Nichrome Coil, engineered as a precision MTL heating element. It sits inside a crystal-clear pod casing, utilizing an organic cotton wick and an optimized MTL airflow channel. This setup guarantees rich vapor production straight from the e-liquid reservoir.
+            Engineered with a high-grade polycarbonate shell, the JUUL pod features an internal heating coil with precision-woven wicks for consistent draws. The unique hexagonal e-liquid window lets you see exactly how much is left, while gold-plated contacts ensure a secure snap-fit connection.
           </motion.p>
           
           <motion.div variants={textItemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-            <div className={`p-5 rounded-2xl border transition-colors ${isLight ? "bg-white border-zinc-200 shadow-sm hover:border-zinc-300" : "bg-zinc-900/40 border-white/5 hover:border-white/10"}`}>
-              <h5 className={`text-sm font-black mb-1.5 ${isLight ? "text-zinc-950" : "text-white"}`}>Pure Flavor</h5>
-              <p className={`text-xs font-medium leading-relaxed ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Organic cotton wick prevents dry hits and ensures pure flavor extraction.</p>
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>0.7mL Capacity</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>With 5.0% Nicotine Concentration</p>
             </div>
-            <div className={`p-5 rounded-2xl border transition-colors ${isLight ? "bg-white border-zinc-200 shadow-sm hover:border-zinc-300" : "bg-zinc-900/40 border-white/5 hover:border-white/10"}`}>
-              <h5 className={`text-sm font-black mb-1.5 ${isLight ? "text-zinc-950" : "text-white"}`}>No Leakage</h5>
-              <p className={`text-xs font-medium leading-relaxed ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Precision-sealed casing locks in e-liquid securely under pressure.</p>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* ═══ SECTION 3: HOW TO CHECK BATTERY ═══ */}
-      <motion.div 
-        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
-        variants={containerVariants}
-        className={`${cardClassName} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center`}
-      >
-        <div className="lg:col-span-7 space-y-6">
-          <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20">
-            <Zap className="w-4 h-4 text-emerald-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400">Battery Status</span>
-          </motion.div>
-          
-          <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
-            Tap to Check <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">Battery Level</span>
-          </motion.h3>
-          
-          <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
-            Stay in control of your device's power. Simply double-tap the body of the device to instantly reveal your current battery status through the smart LED indicator. Knowing your charge level has never been more intuitive.
-          </motion.p>
-
-          <motion.div variants={textItemVariants} className="space-y-3 pt-2">
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Green: High Charge &gt;50%</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Yellow: Medium Charge 25-50%</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Red: Low Charge &lt;25%</span>
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>1.5 Ohms Coil</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Optimized vaporization chamber</p>
             </div>
           </motion.div>
         </div>
 
         <motion.div variants={imageContainerVariants} className="lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
           <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
-            <Image src="/battery-check.png" alt="How to Check Battery Status" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <Image src="/img-pod-spec.jpeg" alt="JUUL Pod Specification" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </motion.div>
       </motion.div>
 
-      {/* ═══ SECTION 4: HEXAGONAL WINDOW ═══ */}
+      {/* ═══ SECTION 2: HEXAGONAL WINDOW (E-LIQUID LEVEL) ═══ */}
       <motion.div 
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
         variants={containerVariants}
@@ -260,7 +168,7 @@ export default function ProductRichDescription({ product, theme }) {
       >
         <motion.div variants={imageContainerVariants} className="lg:col-span-5 lg:order-last h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
           <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
-            <Image src="/e liquid level.jpeg" alt="Hexagonal Window" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <Image src="/E-Liquid Visibility (Hexagonal Liquid Window.jpeg" alt="Hexagonal Window" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </motion.div>
 
@@ -291,7 +199,146 @@ export default function ProductRichDescription({ product, theme }) {
         </div>
       </motion.div>
 
-      {/* ═══ SECTION 5: CHARGING STATUS ═══ */}
+      {/* ═══ SECTION 3: HOW TO CHARGE YOUR JUUL2 ═══ */}
+      <motion.div 
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
+        variants={containerVariants}
+        className={`${cardClassName} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center lg:flex-row-reverse`}
+      >
+        <motion.div variants={imageContainerVariants} className="lg:col-span-5 lg:order-last h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
+          <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
+            <Image src="/img-how-to-charge.jpeg" alt="How to Charge JUUL2" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+          </div>
+        </motion.div>
+
+        <div className="lg:col-span-7 space-y-6">
+          <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-500/10 to-rose-500/10 border border-orange-500/20">
+            <Zap className="w-4 h-4 text-orange-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-orange-600 dark:text-orange-400">Magnetic Docking</span>
+          </motion.div>
+          
+          <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
+            How To Charge <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500">Your JUUL2</span>
+          </motion.h3>
+          
+          <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
+            Charging is intuitive and fast. Place the device flat on the magnetic dock—strong magnets will auto-align the gold and silver pins. A rainbow scroll flash confirms connection. From there, monitor the pulsing white lights as it charges from 25% to 100%.
+          </motion.p>
+          
+          <motion.div variants={textItemVariants} className="space-y-3 pt-2">
+            <div className="flex items-center gap-3 text-sm font-bold">
+              <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center">
+                <CheckSquare className="w-3.5 h-3.5 text-orange-500" />
+              </div>
+              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Sequential Cascade Flash Confirmation</span>
+            </div>
+            <div className="flex items-center gap-3 text-sm font-bold">
+              <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center">
+                <CheckSquare className="w-3.5 h-3.5 text-orange-500" />
+              </div>
+              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Estimated Charge Time: 60 Minutes</span>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* ═══ SECTION 3: DOUBLE TAP TO CHECK BATTERY ═══ */}
+      <motion.div 
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
+        variants={containerVariants}
+        className={`${cardClassName} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center`}
+      >
+        <div className="lg:col-span-7 space-y-6">
+          <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20">
+            <ShieldAlert className="w-4 h-4 text-emerald-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400">Battery Status</span>
+          </motion.div>
+          
+          <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
+            Double Tap To <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">Check Battery</span>
+          </motion.h3>
+          
+          <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
+            Never get caught off guard. Simply double-tap the side of the device to instantly reveal your current battery level. The smart LED indicator visually breaks down your charge status.
+          </motion.p>
+
+          <motion.div variants={textItemVariants} className="grid grid-cols-2 gap-3 pt-2">
+            <div className={`p-3 rounded-xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className="text-xs font-black mb-1">4 Lights (White)</h5>
+              <p className="text-[10px] font-medium text-zinc-500">75-100% Battery</p>
+            </div>
+            <div className={`p-3 rounded-xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className="text-xs font-black mb-1">3 Lights (White)</h5>
+              <p className="text-[10px] font-medium text-zinc-500">50-74% Battery</p>
+            </div>
+            <div className={`p-3 rounded-xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className="text-xs font-black mb-1">2 Lights (White)</h5>
+              <p className="text-[10px] font-medium text-zinc-500">25-49% Battery</p>
+            </div>
+            <div className={`p-3 rounded-xl border ${isLight ? "bg-red-50 border-red-200" : "bg-red-950/20 border-red-500/20"}`}>
+              <h5 className="text-xs font-black text-red-500 mb-1">1 Light (Red)</h5>
+              <p className="text-[10px] font-medium text-red-400">Critical Under 25%</p>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div variants={imageContainerVariants} className="lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
+          <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
+            <Image src="/img-check-battery.jpeg" alt="Check Battery" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* ═══ SECTION 4: BLUETOOTH PAIRING ═══ */}
+      <motion.div 
+        initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
+        variants={containerVariants}
+        className={`${cardClassName} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center lg:flex-row-reverse`}
+      >
+        <motion.div variants={imageContainerVariants} className="lg:col-span-5 lg:order-last h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
+          <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
+            <Image src="/img-bluetooth.jpeg" alt="Bluetooth Pairing" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+          </div>
+        </motion.div>
+
+        <div className="lg:col-span-7 space-y-6">
+          <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+            <RefreshCcw className="w-4 h-4 text-purple-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-purple-600 dark:text-purple-400">Position, Shake, Connect</span>
+          </motion.div>
+          
+          <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
+            Seamless App <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Pairing</span>
+          </motion.h3>
+          
+          <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
+            Connecting your JUUL2 to your smartphone is effortless. Keep devices within a 3-meter maximum range. Shake your JUUL2 and wait 10 seconds, then simply tap connect on your phone when prompted.
+          </motion.p>
+
+          <motion.div variants={textItemVariants} className="space-y-3 pt-2">
+            <div className="flex items-center gap-3 text-sm font-bold">
+              <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <span className="text-[10px] text-purple-500">1</span>
+              </div>
+              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Position Devices (3 Meters Max)</span>
+            </div>
+            <div className="flex items-center gap-3 text-sm font-bold">
+              <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <span className="text-[10px] text-purple-500">2</span>
+              </div>
+              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Shake JUUL2 & Wait 10 Sec</span>
+            </div>
+            <div className="flex items-center gap-3 text-sm font-bold">
+              <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <span className="text-[10px] text-purple-500">3</span>
+              </div>
+              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>JUUL2 Connected Successfully</span>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* ═══ SECTION 5: JUUL2 APP FEATURES ═══ */}
       <motion.div 
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} 
         variants={containerVariants}
@@ -299,37 +346,41 @@ export default function ProductRichDescription({ product, theme }) {
       >
         <div className="lg:col-span-7 space-y-6">
           <motion.div variants={textItemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20">
-            <ShieldAlert className="w-4 h-4 text-amber-500" />
-            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-amber-600 dark:text-amber-400">Smart Diagnostics</span>
+            <Sparkles className="w-4 h-4 text-amber-500" />
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-amber-600 dark:text-amber-400">Complete Device Control</span>
           </motion.div>
           
           <motion.h3 variants={textItemVariants} className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter leading-[1.05] ${isLight ? "text-zinc-950" : "text-white"}`}>
-            Charging Blink <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Sequence</span>
+            JUUL2 App <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Features</span>
           </motion.h3>
           
           <motion.p variants={textItemVariants} className={`text-base font-medium leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
-            Never guess your battery status again. A successful connection is confirmed by a Green-Yellow-Red (G-Y-R) flash, indicating clean pin contact. The internal battery indicator shows solid green when charging is fully complete, so you are always ready to go.
+            The official companion app unlocks powerful capabilities. Get real-time tracking of battery and e-liquid levels. You can also locate your device via GPS, review usage insights, authenticate pods against counterfeits, and lock the device remotely for safety.
           </motion.p>
           
-          <motion.div variants={textItemVariants} className="space-y-3 pt-2">
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                <CheckSquare className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>Solid Green = Fully Charged</span>
+          <motion.div variants={textItemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>Real-Time Tracking</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Live battery and e-liquid readout</p>
             </div>
-            <div className="flex items-center gap-3 text-sm font-bold">
-              <div className="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                <CheckSquare className="w-3.5 h-3.5 text-yellow-600 dark:text-yellow-400" />
-              </div>
-              <span className={isLight ? "text-zinc-800" : "text-zinc-200"}>G-Y-R Blink = Connection Secured</span>
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>Remote Device Lock</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Instantly disable the heating element</p>
+            </div>
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>Pod Authentication</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Reads encrypted Pod ID microchip</p>
+            </div>
+            <div className={`p-4 rounded-2xl border ${isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/5"}`}>
+              <h5 className={`text-sm font-black mb-1 ${isLight ? "text-zinc-950" : "text-white"}`}>Locate My JUUL2</h5>
+              <p className={`text-[11px] font-medium ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>Ring device or view GPS location</p>
             </div>
           </motion.div>
         </div>
 
         <motion.div variants={imageContainerVariants} className="lg:col-span-5 h-[350px] sm:h-[450px] lg:h-[550px] w-full relative">
           <div className={`w-full h-full relative rounded-[2rem] overflow-hidden group ${imageBgClassName}`}>
-            <Image src="/media__1781699614406.png" alt="Charging Blink Sequence" fill className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <Image src="/img-app-features.jpeg" alt="JUUL2 App Features" fill className="object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </motion.div>
       </motion.div>
