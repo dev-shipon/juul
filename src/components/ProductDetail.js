@@ -349,10 +349,10 @@ export default function ProductDetail({ selectedProduct, onAddToCart, setCurrent
               }`}>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs text-left">
                   {[
-                    "Free delivery on orders above 250 DHS",
+                    "Free delivery on orders above 300 DHS",
                     "Cash, card & payment link on delivery",
                     "Same day delivery in Dubai, Sharjah & Ajman before 9 PM",
-                    "Express delivery in Dubai within 1-2 hours",
+                    "Express delivery in Dubai",
                     "Standard delivery within 2-4 hours",
                     "Next day delivery to other Emirates"
                   ].map((bullet, idx) => (

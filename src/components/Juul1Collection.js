@@ -8,6 +8,7 @@ import FAQ from "./FAQ";
 
 export default function Juul1Collection({ onAddToCart, setCurrentPage, setSelectedProduct, theme, activeCategory = "all", setActiveCategory, versionFilter = "all", setVersionFilter }) {
 
+  const [activeSlide, setActiveSlide] = useState("old");
   const flavorScrollRef = useRef(null);
 
   const scrollFlavorLeft = () => {
@@ -42,7 +43,7 @@ export default function Juul1Collection({ onAddToCart, setCurrentPage, setSelect
       imgColor: "#4B5563",
       flavor: "classic",
       tag: "Original Classic",
-      desc: "Anodized metal body with signature rapid USB magnetic charging."
+      desc: "The JUUL 1 Kit , Where premium design meets effortless performance"
     },
     {
       id: "juul1-silver",
@@ -650,7 +651,7 @@ export default function Juul1Collection({ onAddToCart, setCurrentPage, setSelect
               isLight ? "bg-white border-zinc-200" : "bg-zinc-900/40 border-white/10"
             }`}>
               <div className="flex flex-col lg:flex-row gap-12 items-center">
-                {/* Text Content */}
+                {/* Text & Specs Content */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <div className="flex items-center gap-3">
                     <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-500">
@@ -660,75 +661,190 @@ export default function Juul1Collection({ onAddToCart, setCurrentPage, setSelect
                   </div>
                   <p className={`text-lg leading-relaxed ${isLight ? "text-zinc-600" : "text-zinc-400"}`}>
                     To combat counterfeit products in the UAE market, JUUL has overhauled its product packaging. 
-                    The new packaging introduces advanced security features, bolder design language, and strict compliance labels. 
-                    Understand the differences to ensure you only purchase 100% authentic pods.
+                    নিচের slider বা button ব্যবহার করে old এবং new packaging-এর মূল পার্থক্য দেখে নিন।
                   </p>
 
-                  {/* Comparison Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                    {/* Old Packaging Card */}
-                    <div className={`p-5 rounded-2xl border ${
-                      isLight ? "bg-zinc-50 border-zinc-150" : "bg-zinc-800/20 border-white/5"
-                    }`}>
-                      <h4 className="text-lg font-bold text-red-500 mb-3 flex items-center gap-2">
-                        <AlertCircle className="w-5 h-5" /> Old Packaging
-                      </h4>
-                      <ul className="space-y-2 text-sm leading-relaxed">
-                        <li className="flex items-start gap-2 text-zinc-500 dark:text-zinc-400">
-                          <span className="text-red-500 shrink-0">•</span> Plain white matte cardboard boxes
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-500 dark:text-zinc-400">
-                          <span className="text-red-500 shrink-0">•</span> Basic branding without generation detail
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-500 dark:text-zinc-400">
-                          <span className="text-red-500 shrink-0">•</span> Lacked anti-counterfeit hologram QR codes
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-500 dark:text-zinc-400">
-                          <span className="text-red-500 shrink-0">•</span> Outdated health warning messages
-                        </li>
-                      </ul>
-                    </div>
+                  {/* Navigation Tabs */}
+                  <div className="flex gap-2 p-1.5 bg-zinc-100 dark:bg-zinc-800/40 rounded-2xl w-fit">
+                    <button
+                      onClick={() => setActiveSlide("old")}
+                      className={`px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider font-black transition-all cursor-pointer ${
+                        activeSlide === "old"
+                          ? "bg-red-500 text-white shadow-lg shadow-red-500/20"
+                          : "text-zinc-500 hover:text-zinc-800 dark:hover:text-white"
+                      }`}
+                    >
+                      Old Packaging
+                    </button>
+                    <button
+                      onClick={() => setActiveSlide("new")}
+                      className={`px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider font-black transition-all cursor-pointer ${
+                        activeSlide === "new"
+                          ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/20"
+                          : "text-zinc-500 hover:text-zinc-800 dark:hover:text-white"
+                      }`}
+                    >
+                      New Packaging
+                    </button>
+                  </div>
 
-                    {/* New Packaging Card */}
-                    <div className={`p-5 rounded-2xl border ${
-                      isLight ? "bg-emerald-50/50 border-emerald-100/80" : "bg-emerald-500/5 border-emerald-500/10"
-                    }`}>
-                      <h4 className="text-lg font-bold text-emerald-500 mb-3 flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5" /> New Packaging
-                      </h4>
-                      <ul className="space-y-2 text-sm leading-relaxed">
-                        <li className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 font-medium">
-                          <span className="text-emerald-500 shrink-0">•</span> Premium dark/black robust box design
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 font-medium">
-                          <span className="text-emerald-500 shrink-0">•</span> Distinct generation badges ("JUUL 1")
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 font-medium">
-                          <span className="text-emerald-500 shrink-0">•</span> Smart hologram QR verification seal
-                        </li>
-                        <li className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 font-medium">
-                          <span className="text-emerald-500 shrink-0">•</span> Compliance warnings printed on front & back
-                        </li>
-                      </ul>
-                    </div>
+                  {/* Details Cards Container */}
+                  <div className="relative overflow-hidden min-h-[260px]">
+                    <AnimatePresence mode="wait">
+                      {activeSlide === "old" ? (
+                        <motion.div
+                          key="old-details"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: 20 }}
+                          transition={{ duration: 0.3 }}
+                          className={`p-6 rounded-3xl border transition-all duration-300 ${
+                            isLight 
+                              ? "bg-red-50/30 border-red-200/60 shadow-[0_10px_30px_rgba(239,68,68,0.05)]" 
+                              : "bg-red-950/5 border-red-500/10 shadow-[0_10px_30px_rgba(239,68,68,0.02)]"
+                          }`}
+                        >
+                          <h4 className="text-xl font-bold text-red-500 mb-4 flex items-center gap-2">
+                            <AlertCircle className="w-5.5 h-5.5" /> Old Packaging Specifications
+                          </h4>
+                          <ul className="space-y-3 text-base leading-relaxed">
+                            <li className="flex items-start gap-2.5 text-zinc-500 dark:text-zinc-400">
+                              <span className="text-red-500 shrink-0 text-lg">•</span>
+                              <span><strong>Cardboard Sleeve:</strong> Plain white matte paper sleeves. Subject to easy wear, tearing, and fading.</span>
+                            </li>
+                            <li className="flex items-start gap-2.5 text-zinc-500 dark:text-zinc-400">
+                              <span className="text-red-500 shrink-0 text-lg">•</span>
+                              <span><strong>Branding & Font:</strong> Basic minimalist typography without distinct generation indicators (doesn't explicitly say "JUUL 1").</span>
+                            </li>
+                            <li className="flex items-start gap-2.5 text-zinc-500 dark:text-zinc-400">
+                              <span className="text-red-500 shrink-0 text-lg">•</span>
+                              <span><strong>Security Tracking:</strong> Lacks 3D holographic authentication QR stickers on the top closure flap. High risk of counterfeit clones.</span>
+                            </li>
+                          </ul>
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="new-details"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.3 }}
+                          className={`p-6 rounded-3xl border transition-all duration-300 ${
+                            isLight 
+                              ? "bg-emerald-50/30 border-emerald-200/60 shadow-[0_10px_30px_rgba(16,185,129,0.05)]" 
+                              : "bg-emerald-950/5 border-emerald-500/10 shadow-[0_10px_30px_rgba(16,185,129,0.02)]"
+                          }`}
+                        >
+                          <h4 className="text-xl font-bold text-emerald-500 mb-4 flex items-center gap-2">
+                            <CheckCircle className="w-5.5 h-5.5" /> New Packaging Specifications
+                          </h4>
+                          <ul className="space-y-3 text-base leading-relaxed">
+                            <li className="flex items-start gap-2.5 text-zinc-700 dark:text-zinc-300 font-medium">
+                              <span className="text-emerald-500 shrink-0 text-lg">•</span>
+                              <span><strong>Premium Textured Box:</strong> Robust, thick dark/black cardboard box with structural protection.</span>
+                            </li>
+                            <li className="flex items-start gap-2.5 text-zinc-700 dark:text-zinc-300 font-medium">
+                              <span className="text-emerald-500 shrink-0 text-lg">•</span>
+                              <span><strong>Generation Badges:</strong> Bold typography clearly stating "JUUL 1 Device Kit" or "JUUL 1 Pods" for product identification.</span>
+                            </li>
+                            <li className="flex items-start gap-2.5 text-zinc-700 dark:text-zinc-300 font-medium">
+                              <span className="text-emerald-500 shrink-0 text-lg">•</span>
+                              <span><strong>Hologram Verification:</strong> Features a high-security holographic QR seal on the top flap. Scan to instantly check authenticity.</span>
+                            </li>
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 
-                {/* Packaging Image representation */}
+                {/* Slider Image Showcase */}
                 <div className="w-full lg:w-1/2 flex justify-center">
-                  <div className={`relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border p-4 shadow-2xl transition-transform duration-300 hover:scale-[1.02] ${
-                    isLight ? "bg-zinc-50 border-zinc-200" : "bg-zinc-950 border-white/5"
-                  }`}>
-                    <div className="relative w-full h-full">
-                      <Image
-                        src="/juul_packaging_comparison.png"
-                        alt="JUUL 1 Old vs New Packaging Comparison"
-                        fill
-                        className="object-cover rounded-2xl"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
-                      />
+                  <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-visible p-2">
+                    
+                    {/* Shadow backdrop dynamic based on active state */}
+                    <div 
+                      className={`absolute inset-2 rounded-3xl blur-3xl opacity-50 transition-all duration-700 ${
+                        activeSlide === "old" 
+                          ? "bg-red-500/30 shadow-[0_0_50px_20px_rgba(239,68,68,0.45)]" 
+                          : "bg-emerald-500/30 shadow-[0_0_50px_20px_rgba(16,185,129,0.45)]"
+                      }`} 
+                    />
+
+                    {/* Image Container with Custom Glow Border/Shadow */}
+                    <div className={`relative w-full h-full rounded-[2.5rem] overflow-hidden border p-4 shadow-2xl transition-all duration-500 ${
+                      activeSlide === "old"
+                        ? "bg-white border-red-500/50 shadow-[0_0_35px_rgba(239,68,68,0.3)]"
+                        : "bg-zinc-950 border-emerald-500/50 shadow-[0_0_35px_rgba(16,185,129,0.3)]"
+                    }`}>
+                      <AnimatePresence mode="wait">
+                        {activeSlide === "old" ? (
+                          <motion.div
+                            key="old-img"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.4 }}
+                            className="relative w-full h-full"
+                          >
+                            <Image
+                              src="/juul_old_packaging.png"
+                              alt="JUUL 1 Old Packaging"
+                              fill
+                              className="object-cover rounded-2xl"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              priority
+                            />
+                            <div className="absolute bottom-4 left-4 bg-red-600/80 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] text-white font-black uppercase tracking-wider">
+                              Old Design
+                            </div>
+                          </motion.div>
+                        ) : (
+                          <motion.div
+                            key="new-img"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.4 }}
+                            className="relative w-full h-full"
+                          >
+                            <Image
+                              src="/juul_new_packaging.png"
+                              alt="JUUL 1 New Packaging"
+                              fill
+                              className="object-cover rounded-2xl"
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              priority
+                            />
+                            <div className="absolute bottom-4 left-4 bg-emerald-600/80 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] text-white font-black uppercase tracking-wider">
+                              New Design
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
+
+                    {/* Quick navigation arrows on the image sides */}
+                    <button
+                      onClick={() => setActiveSlide(activeSlide === "old" ? "new" : "old")}
+                      className={`absolute top-1/2 -translate-y-1/2 -left-4 z-20 p-3 rounded-full shadow-lg border transition-all cursor-pointer ${
+                        activeSlide === "old"
+                          ? "bg-red-500 border-red-400 text-white hover:bg-red-650"
+                          : "bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600"
+                      }`}
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => setActiveSlide(activeSlide === "old" ? "new" : "old")}
+                      className={`absolute top-1/2 -translate-y-1/2 -right-4 z-20 p-3 rounded-full shadow-lg border transition-all cursor-pointer ${
+                        activeSlide === "old"
+                          ? "bg-red-500 border-red-400 text-white hover:bg-red-650"
+                          : "bg-emerald-500 border-emerald-400 text-white hover:bg-emerald-600"
+                      }`}
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               </div>

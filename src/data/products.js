@@ -13,7 +13,7 @@ export const juul1Products = [
     imgColor: "#4B5563",
     flavor: "classic",
     tag: "Original Classic",
-    desc: "Anodized metal body with signature rapid USB magnetic charging.",
+    desc: "The JUUL 1 Kit , Where premium design meets effortless performance",
   },
   {
     id: "juul1-silver",

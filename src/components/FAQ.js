@@ -10,20 +10,36 @@ export default function FAQ({ theme }) {
 
   const faqs = [
     {
-      q: "Is JUUL available in UAE?",
-      a: "Yes, authentic JUUL devices and pod flavors are fully available for purchase online in the UAE with rapid delivery across Dubai, Sharjah, Abu Dhabi, and other emirates."
+      q: "What is the JUUL 1 Kit and what comes in the box?",
+      a: "The JUUL 1 Kit is a compact closed pod vaping device. Designed for adult users who want a simple and satisfying experience. When you open the box you will find the JUUL 1 device itself, a magnetic USB charging dock and a starter pack of JUUL pods. Everything you need to get started is right there in the box. No complicated setup and no technical knowledge required."
     },
     {
-      q: "How long does one pod last?",
-      a: "One authentic JUUL pod is engineered to last approximately 200 puffs, which is roughly equivalent to a standard pack of 20 traditional cigarettes, depending on your individual usage patterns."
+      q: "How do I use the JUUL 1 device?",
+      a: "Using JUUL 1 is about as simple as it gets. Just take a flavor pod and click it into the top of the device. The magnetic connection will hold it firmly in place. Once the pod is in, simply inhale from the mouthpiece. The device is inhale activated. So there are no buttons to press or settings to adjust. It just works the moment you draw from it."
     },
     {
-      q: "Do you deliver outside Dubai?",
-      a: "Yes! We provide fast, reliable courier delivery to all UAE emirates, including Abu Dhabi, Sharjah, Ajman, Fujairah, Ras Al Khaimah, and Umm Al Quwain, with same-day dispatch available."
+      q: "What pods are compatible with the JUUL 1 device?",
+      a: "The JUUL 1 device is compatible with JUUL 1 pods. These are pre-filled closed pods that come in a range of flavors including Virginia Tobacco and Menthol. Always make sure you are using genuine JUUL pods for the best performance and safety."
     },
     {
-      q: "Minimum age to order?",
-      a: "Strictly age 21 years or older. We maintain a strict age verification compliance protocol at checkout and upon delivery to ensure responsible consumption."
+      q: "How long does a JUUL pod last?",
+      a: "This really depends on how often you use it. For a moderate user one JUUL pod can last through a full day of use. If you vape more frequently you may find yourself changing a little faster."
+    },
+    {
+      q: "How do I check the battery level on my JUUL 1?",
+      a: "Checking your battery is really easy. Just give the device a gentle double tap and the LED indicator will light up to show you the current battery level. A green light means you are good to go. Yellow means the battery is getting low and it is worth thinking about charging soon. A red light means the battery is nearly empty and it is time to plug in."
+    },
+    {
+      q: "How do I charge the JUUL 1 device?",
+      a: "Charging JUUL 1 is very straightforward. Place the device onto the magnetic USB charging dock. Make sure it connects securely. You will notice the LED light up during charging to let you know it is working. Once fully charged the light will turn solid green."
+    },
+    {
+      q: "How do I know if my JUUL 1 device is genuine and authentic?",
+      a: "Always buy your JUUL 1 Kit from a trusted and authorized vape store in the UAE. Genuine JUUL devices come in properly sealed premium packaging with all the correct branding and labeling."
+    },
+    {
+      q: "Is the JUUL 1 Kit compliant with UAE regulations?",
+      a: "Yes. The JUUL 1 Kit and compatible JUUL pods available in our store are fully compliant with ESMA regulations and UAE vape safety standards. The available pod flavors including Virginia Tobacco and Menthol are approved for sale in the UAE market."
     }
   ];
 
