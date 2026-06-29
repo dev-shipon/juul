@@ -23,7 +23,7 @@ const slides = [
     desc: "Upgrade your setup with the latest JUUL device UAE options: grab a JUUL starter kit UAE or just top up on pods.",
     cta: "Shop JUUL 2", color: "#E11D48", version: "juul2",
     specs: [
-      { label: "Battery", value: "228mAh" },
+      { label: "Battery", value: "328mAh" },
       { label: "Draw", value: "Auto-Sensor" },
       { label: "Indicator", value: "Smart LED" },
       { label: "Charge", value: "Magnetic USB-A" }
