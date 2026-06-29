@@ -23,10 +23,10 @@ const slides = [
     desc: "Upgrade your setup with the latest JUUL device UAE options: grab a JUUL starter kit UAE or just top up on pods.",
     cta: "Shop JUUL 2", color: "#E11D48", version: "juul2",
     specs: [
-      { label: "Battery", value: "250mAh+" },
+      { label: "Battery", value: "228mAh" },
       { label: "Draw", value: "Auto-Sensor" },
       { label: "Indicator", value: "Smart LED" },
-      { label: "Charge", value: "Fast USB-C" }
+      { label: "Charge", value: "Magnetic USB-A" }
     ]
   },
   {
@@ -35,7 +35,7 @@ const slides = [
     desc: "Your go-to Juul vape pods Shop in UAE for authentic pods, devices, chargers, and accessories with fast delivery across Dubai and the UAE.",
     cta: "Explore Catalog", color: "#F59E0B", version: "all",
     specs: [
-      { label: "Delivery", value: "2 Hours" },
+      { label: "Delivery", value: "Same Day" },
       { label: "Quality", value: "Authentic" },
       { label: "Shipping", value: "Fast UAE" },
       { label: "Coverage", value: "All UAE" }
@@ -145,8 +145,8 @@ export default function HeroSection({ setCurrentPage, setCategoryFilter, setVers
 
       {/* ═══ Tech grid ═══ */}
       <div className={`absolute inset-0 pointer-events-none ${isLight
-          ? "bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)]"
-          : "bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)]"
+        ? "bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000004_1px,transparent_1px)]"
+        : "bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)]"
         } bg-[size:40px_40px] opacity-40`} />
 
       {/* ═══ MAIN CONTENT ═══ */}
@@ -220,8 +220,8 @@ export default function HeroSection({ setCurrentPage, setCategoryFilter, setVers
                   <button
                     onClick={() => go("all")}
                     className={`inline-flex items-center justify-center px-9 py-4 rounded-full text-[11px] font-black uppercase tracking-widest border transition-all active:scale-95 cursor-pointer ${isLight
-                        ? "border-zinc-200 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-300"
-                        : "border-white/10 text-zinc-300 hover:bg-white/5 hover:border-white/20"
+                      ? "border-zinc-200 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-300"
+                      : "border-white/10 text-zinc-300 hover:bg-white/5 hover:border-white/20"
                       }`}
                   >
                     Full Collection
@@ -299,8 +299,8 @@ export default function HeroSection({ setCurrentPage, setCategoryFilter, setVers
                       animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
                       transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
                       className={`flex flex-col items-center justify-center text-center px-4 py-3 sm:py-3.5 rounded-2xl backdrop-blur-xl border transition-transform duration-500 will-change-transform ${isLight
-                          ? "bg-white/70 border-white shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
-                          : "bg-[#09090A]/70 border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                        ? "bg-white/70 border-white shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                        : "bg-[#09090A]/70 border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
                         }`}
                     >
                       <span className={`text-[8px] sm:text-[9px] uppercase tracking-widest font-black flex items-center justify-center gap-1.5 mb-1 ${isLight ? "text-zinc-500" : "text-zinc-400"
