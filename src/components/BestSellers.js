@@ -142,6 +142,11 @@ export default function BestSellers({ onAddToCart, setCurrentPage, setSelectedPr
             }`}>
               Best Sellers UAE
             </h2>
+            <p className={`text-sm sm:text-base max-w-2xl font-normal leading-relaxed ${
+              isLight ? "text-zinc-600" : "text-zinc-400"
+            }`}>
+              These are the top reorders, fan‑favorite devices and pod packs. If you want a trusted Juul vape pods Shop in UAE, start with what people buy again and again.
+            </p>
           </div>
           <Link
             href="/juul2"

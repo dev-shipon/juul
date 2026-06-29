@@ -79,9 +79,8 @@ function TimeBlock({ value, label, isLight }) {
   const display = String(value).padStart(2, "0");
   return (
     <div className="flex flex-col items-center gap-1">
-      <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-black text-lg tabular-nums overflow-hidden relative ${
-        isLight ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"
-      }`}>
+      <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-black text-lg tabular-nums overflow-hidden relative ${isLight ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"
+        }`}>
         <AnimatePresence mode="wait">
           <motion.span
             key={display}
@@ -94,9 +93,8 @@ function TimeBlock({ value, label, isLight }) {
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className={`text-[8px] uppercase tracking-widest font-bold ${
-        isLight ? "text-zinc-400" : "text-zinc-500"
-      }`}>{label}</span>
+      <span className={`text-[8px] uppercase tracking-widest font-bold ${isLight ? "text-zinc-400" : "text-zinc-500"
+        }`}>{label}</span>
     </div>
   );
 }
@@ -144,11 +142,10 @@ function DealCard({ deal, isLight, onAddToCart, index, onProductClick }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20px" }}
       transition={{ delay: index * 0.09, duration: 0.45, ease: "easeOut" }}
-      className={`group relative rounded-3xl border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 ${
-        isLight
+      className={`group relative rounded-3xl border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1.5 ${isLight
           ? "bg-white border-zinc-200/80 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_36px_rgba(0,0,0,0.09)]"
           : "bg-[#111112] border-white/[0.06] hover:border-white/10"
-      }`}
+        }`}
     >
       {/* Discount pill */}
       <div
@@ -160,11 +157,10 @@ function DealCard({ deal, isLight, onAddToCart, index, onProductClick }) {
 
       {/* Low stock warning */}
       {deal.stock && (
-        <div className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${
-          isLight
+        <div className={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${isLight
             ? "bg-amber-50 text-amber-600 border border-amber-200"
             : "bg-amber-950/50 text-amber-400 border border-amber-800/30"
-        }`}>
+          }`}>
           Only {deal.stock} left!
         </div>
       )}
@@ -172,9 +168,8 @@ function DealCard({ deal, isLight, onAddToCart, index, onProductClick }) {
       {/* Product Image */}
       <Link
         href={`/product/${deal.id}`}
-        className={`relative w-full h-48 overflow-hidden cursor-pointer block ${
-          isLight ? "bg-zinc-50" : "bg-zinc-900/50"
-        }`}
+        className={`relative w-full h-48 overflow-hidden cursor-pointer block ${isLight ? "bg-zinc-50" : "bg-zinc-900/50"
+          }`}
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -218,9 +213,8 @@ function DealCard({ deal, isLight, onAddToCart, index, onProductClick }) {
             <span className={`text-sm line-through mb-0.5 ${isLight ? "text-zinc-400" : "text-zinc-600"}`}>
               {deal.originalPrice}
             </span>
-            <span className={`text-[10px] font-black mb-0.5 px-2 py-0.5 rounded-full ${
-              isLight ? "bg-emerald-50 text-emerald-600" : "bg-emerald-950/50 text-emerald-400"
-            }`}>
+            <span className={`text-[10px] font-black mb-0.5 px-2 py-0.5 rounded-full ${isLight ? "bg-emerald-50 text-emerald-600" : "bg-emerald-950/50 text-emerald-400"
+              }`}>
               Save AED {savings}
             </span>
           </div>
@@ -229,13 +223,12 @@ function DealCard({ deal, isLight, onAddToCart, index, onProductClick }) {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={handleAdd}
-            className={`w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer border ${
-              added
+            className={`w-full py-3 rounded-2xl flex items-center justify-center gap-2 text-[11px] font-black uppercase tracking-wider transition-all cursor-pointer border ${added
                 ? "bg-emerald-500 border-emerald-500 text-white"
                 : isLight
-                ? "bg-zinc-950 border-zinc-950 text-white hover:bg-zinc-800"
-                : "bg-white border-white text-zinc-950 hover:bg-zinc-100"
-            }`}
+                  ? "bg-zinc-950 border-zinc-950 text-white hover:bg-zinc-800"
+                  : "bg-white border-white text-zinc-950 hover:bg-zinc-100"
+              }`}
           >
             {added ? (
               <><span>✓</span> Added!</>
@@ -305,9 +298,8 @@ export default function FlashDeals({ theme, onAddToCart, setSelectedProduct, set
   const repeatedDeals = [...DEALS, ...DEALS, ...DEALS, ...DEALS];
 
   return (
-    <section className={`py-20 transition-colors duration-500 relative overflow-hidden ${
-      isLight ? "bg-white" : "bg-[#09090A]"
-    }`}>
+    <section className={`py-20 transition-colors duration-500 relative overflow-hidden ${isLight ? "bg-white" : "bg-[#09090A]"
+      }`}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* ── Header Row ── */}
@@ -317,31 +309,29 @@ export default function FlashDeals({ theme, onAddToCart, setSelectedProduct, set
               <div className="w-6 h-6 rounded-lg bg-red-500 flex items-center justify-center">
                 <Zap className="w-3.5 h-3.5 text-white fill-white" />
               </div>
-              <span className={`text-xs font-bold uppercase tracking-widest ${
-                isLight ? "text-red-500" : "text-red-400"
-              }`}>
+              <span className={`text-xs font-bold uppercase tracking-widest ${isLight ? "text-red-500" : "text-red-400"
+                }`}>
                 Limited Time Offers
               </span>
             </div>
-            <h2 className={`text-3xl sm:text-5xl font-black tracking-tight ${
-              isLight ? "text-zinc-950" : "text-white"
-            }`}>
+            <h2 className={`text-3xl sm:text-5xl font-black tracking-tight ${isLight ? "text-zinc-950" : "text-white"
+              }`}>
               Flash Deals <span>🔥</span>
             </h2>
             <p className={`text-sm font-light ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
-              Exclusive discounts on premium JUUL bundles. Grab them before they're gone.
+              Limited-time bundles on authentic pods, devices, and extras. Perfect if you’re shopping from a Juul vape pods Shop in UAE and want a better price today.
+              No international shipping outside UAE: shipping & delivery
+              .
             </p>
           </div>
 
           {/* ── Countdown Timer ── */}
-          <div className={`flex-shrink-0 px-5 py-4 rounded-3xl border flex flex-col items-center gap-3 ${
-            isLight ? "bg-zinc-50 border-zinc-200" : "bg-white/[0.02] border-white/5"
-          }`}>
+          <div className={`flex-shrink-0 px-5 py-4 rounded-3xl border flex flex-col items-center gap-3 ${isLight ? "bg-zinc-50 border-zinc-200" : "bg-white/[0.02] border-white/5"
+            }`}>
             <div className="flex items-center gap-1.5">
               <Timer className="w-3.5 h-3.5 text-red-500 animate-pulse" />
-              <span className={`text-[10px] font-black uppercase tracking-widest ${
-                isLight ? "text-zinc-500" : "text-zinc-400"
-              }`}>Ends In</span>
+              <span className={`text-[10px] font-black uppercase tracking-widest ${isLight ? "text-zinc-500" : "text-zinc-400"
+                }`}>Ends In</span>
             </div>
             <div className="flex items-end gap-2">
               <TimeBlock value={h} label="Hrs" isLight={isLight} />
@@ -353,26 +343,26 @@ export default function FlashDeals({ theme, onAddToCart, setSelectedProduct, set
           </div>
         </div>
         {/* Auto Scrolling Deals Slider */}
-        <div 
+        <div
           className="relative w-full overflow-hidden py-4 group/slider"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Navigation Arrows */}
-          <button 
-            onClick={scrollLeftNav} 
+          <button
+            onClick={scrollLeftNav}
             className="absolute left-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-xl border border-zinc-200 dark:border-white/10 opacity-0 group-hover/slider:opacity-100 transition-opacity cursor-pointer hidden sm:flex"
           >
             <ChevronLeft className="w-5 h-5 text-zinc-900 dark:text-white" />
           </button>
-          <button 
-            onClick={scrollRightNav} 
+          <button
+            onClick={scrollRightNav}
             className="absolute right-2 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-xl border border-zinc-200 dark:border-white/10 opacity-0 group-hover/slider:opacity-100 transition-opacity cursor-pointer hidden sm:flex"
           >
             <ChevronRight className="w-5 h-5 text-zinc-900 dark:text-white" />
           </button>
 
-          <div 
+          <div
             ref={scrollRef}
             className="flex gap-6 w-full overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 px-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}

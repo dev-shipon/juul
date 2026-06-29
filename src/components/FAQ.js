@@ -10,36 +10,48 @@ export default function FAQ({ theme }) {
 
   const faqs = [
     {
-      q: "What is the JUUL 1 Kit and what comes in the box?",
-      a: "The JUUL 1 Kit is a compact closed pod vaping device. Designed for adult users who want a simple and satisfying experience. When you open the box you will find the JUUL 1 device itself, a magnetic USB charging dock and a starter pack of JUUL pods. Everything you need to get started is right there in the box. No complicated setup and no technical knowledge required."
+      q: "What is JUUL?",
+      a: "JUUL is a compact e-cigarette (a pod system) that uses pre-filled pods with nicotine salt. There are no buttons—just insert a pod and inhale. It’s popular with adult smokers looking for a cleaner tobacco alternative without the mess of refilling."
     },
     {
-      q: "How do I use the JUUL 1 device?",
-      a: "Using JUUL 1 is about as simple as it gets. Just take a flavor pod and click it into the top of the device. The magnetic connection will hold it firmly in place. Once the pod is in, simply inhale from the mouthpiece. The device is inhale activated. So there are no buttons to press or settings to adjust. It just works the moment you draw from it."
+      q: "What’s in the JUUL 1 starter kit?",
+      a: (
+        <div className="space-y-2">
+          <p>A typical JUUL starter kit UAE includes:</p>
+          <ul className="list-disc list-inside space-y-1 pl-2">
+            <li>JUUL 1 device</li>
+            <li>Magnetic USB charger</li>
+            <li>Quick start guide</li>
+          </ul>
+          <p className="text-[11px] opacity-80 mt-1">(Kit contents can vary by batch, but we’ll show exactly what’s included on the product page.)</p>
+        </div>
+      )
     },
     {
-      q: "What pods are compatible with the JUUL 1 device?",
-      a: "The JUUL 1 device is compatible with JUUL 1 pods. These are pre-filled closed pods that come in a range of flavors including Virginia Tobacco and Menthol. Always make sure you are using genuine JUUL pods for the best performance and safety."
+      q: "Which pods work with the JUUL 1 device?",
+      a: (
+        <div className="space-y-1.5">
+          <p>JUUL 1 works with JUUL 1 pods (not JUUL 2 pods).</p>
+          <p>For JUUL 1, you’ll usually see 3% (30mg) and 5% (50mg) nicotine strengths, with core flavors like Menthol and Virginia Tobacco in 4‑pod packs.</p>
+        </div>
+      )
+    },
+    {
+      q: "Are JUUL pods refillable?",
+      a: "Standard JUUL pods are meant to be used as-is (closed pods). Some people try DIY refills, but it can cause leaks and inconsistent flavor delivery. If you want a clean experience, it’s better to use proper replacement pods from an authentic source."
     },
     {
       q: "How long does a JUUL pod last?",
-      a: "This really depends on how often you use it. For a moderate user one JUUL pod can last through a full day of use. If you vape more frequently you may find yourself changing a little faster."
+      a: "It depends on your draw length and how often you vape, but most users get roughly 200 puffs per pod (give or take). If you’re a light user, one pod can last a full day. If you chain-vape, expect less."
     },
     {
-      q: "How do I check the battery level on my JUUL 1?",
-      a: "Checking your battery is really easy. Just give the device a gentle double tap and the LED indicator will light up to show you the current battery level. A green light means you are good to go. Yellow means the battery is getting low and it is worth thinking about charging soon. A red light means the battery is nearly empty and it is time to plug in."
-    },
-    {
-      q: "How do I charge the JUUL 1 device?",
-      a: "Charging JUUL 1 is very straightforward. Place the device onto the magnetic USB charging dock. Make sure it connects securely. You will notice the LED light up during charging to let you know it is working. Once fully charged the light will turn solid green."
-    },
-    {
-      q: "How do I know if my JUUL 1 device is genuine and authentic?",
-      a: "Always buy your JUUL 1 Kit from a trusted and authorized vape store in the UAE. Genuine JUUL devices come in properly sealed premium packaging with all the correct branding and labeling."
-    },
-    {
-      q: "Is the JUUL 1 Kit compliant with UAE regulations?",
-      a: "Yes. The JUUL 1 Kit and compatible JUUL pods available in our store are fully compliant with ESMA regulations and UAE vape safety standards. The available pod flavors including Virginia Tobacco and Menthol are approved for sale in the UAE market."
+      q: "How do I spot fake JUUL products in the UAE?",
+      a: (
+        <div className="space-y-2">
+          <p>Simple rule: if the packaging looks off, the taste feels weird, or the seal isn’t right—don’t risk it.</p>
+          <p>Our Juul vape pods Shop in UAE sells authentic stock only: factory-sealed boxes, verified batches, and consistent pod performance. If you ever want help checking your product, send us photos and we’ll guide you.</p>
+        </div>
+      )
     }
   ];
 

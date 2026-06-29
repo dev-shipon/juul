@@ -10,25 +10,25 @@ export default function Features({ theme }) {
     {
       icon: <ShieldCheck className={`w-6 h-6 ${isLight ? "text-zinc-950" : "text-white"}`} />,
       title: "100% Authentic",
-      desc: "Direct brand sourcing ensures guaranteed safety and zero counterfeit products.",
+      desc: "Every JUUL device, pod, and accessory is sourced directly: no knockoffs, no mystery stock. You're getting the real thing, sealed and verified.",
       glow: isLight ? "hover:shadow-zinc-950/[0.03]" : "hover:shadow-white/5"
     },
     {
       icon: <Truck className={`w-6 h-6 ${isLight ? "text-zinc-950" : "text-white"}`} />,
-      title: "Express UAE Shipping",
-      desc: "Same-day courier dispatch inside Dubai and rapid next-day delivery to other emirates.",
+      title: "Express UAE Delivery",
+      desc: "For orders made before 9pm, your order can arrive today throughout Dubai and Sharjah. If outside those emirates then worry not as all other emirates receive orders 7 days a week (orders will next-day dispatch) with free delivery for any orders over AED 300.",
       glow: isLight ? "hover:shadow-zinc-950/[0.03]" : "hover:shadow-white/5"
     },
     {
       icon: <UserCheck className={`w-6 h-6 ${isLight ? "text-zinc-950" : "text-white"}`} />,
-      title: "Age Compliant",
-      desc: "Strict age 21+ verification compliance at checkout and upon delivery for adult smokers.",
+      title: "Age Verified (18+)",
+      desc: "Buyers must be 18 or older. Orders placed by minors won't be handed over or refunded.",
       glow: isLight ? "hover:shadow-zinc-950/[0.03]" : "hover:shadow-white/5"
     },
     {
       icon: <Tag className={`w-6 h-6 ${isLight ? "text-zinc-950" : "text-white"}`} />,
-      title: "Guaranteed Best Price",
-      desc: "Enjoy authentic vaping systems at highly competitive retail pricing and bulk deals.",
+      title: "Best Price Guaranteed",
+      desc: "Competitive pricing on all JUUL pods and devices. Orders above AED 300 ship free and below that, it's just AED 30. Minimum order is AED 85.",
       glow: isLight ? "hover:shadow-zinc-950/[0.03]" : "hover:shadow-white/5"
     }
   ];
@@ -64,13 +64,13 @@ export default function Features({ theme }) {
           <span className={`text-xs font-bold uppercase tracking-widest ${
             isLight ? "text-blue-600" : "text-emerald-400"
           }`}>
-            Engineered Perfection
+            Why Shop With Us
           </span>
           <h2 className={`text-3xl sm:text-5xl font-extrabold ${isLight ? "text-zinc-950" : "text-white"}`}>
             Uncompromising Standards
           </h2>
           <p className={`font-light ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
-            Every millimeter of the JUUL is optimized for reliability and seamless comfort. Built with medical-grade alloys and pure elements.
+            We process every single Juul vape pods order in UAE seriously - genuine merchandise, quick shipping, & live customer service, so what is that looks?
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Features({ theme }) {
               key={i}
               variants={cardVariants}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className={`p-8 rounded-3xl border transition-all duration-300 flex flex-col justify-between h-72 ${
+              className={`p-8 rounded-3xl border transition-all duration-300 flex flex-col justify-start min-h-[290px] ${
                 isLight 
                   ? "bg-zinc-50 border-zinc-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:border-zinc-300 hover:bg-zinc-100/60" 
                   : "bg-white/[0.02] border-white/5 hover:border-white/10"

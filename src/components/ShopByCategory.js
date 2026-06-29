@@ -68,6 +68,11 @@ export default function ShopByCategory({ setCurrentPage, setCategoryFilter, setV
           }`}>
             Official UAE Collections
           </h2>
+          <p className={`text-sm sm:text-base max-w-2xl font-normal leading-relaxed ${
+            isLight ? "text-zinc-600" : "text-zinc-400"
+          }`}>
+            Pick your setup in seconds. This Juul vape pods Shop in UAE keeps it simple, authentic JUUL pods, devices, and accessories with quick UAE delivery.
+          </p>
         </motion.div>
 
         {/* Categories Grid */}

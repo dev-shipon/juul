@@ -29,7 +29,7 @@ const blogPosts = [
     category: "Tips & Tricks",
     date: "Sep 28, 2023",
     readTime: "3 min read",
-    imgUrl: "https://images.unsplash.com/photo-1620052566052-8176882250da?q=80&w=800&auto=format&fit=crop"
+    imgUrl: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=800&auto=format&fit=crop"
   }
 ];
 

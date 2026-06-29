@@ -6,9 +6,21 @@ import { useState, useEffect, useRef } from "react";
 
 const slides = [
   {
-    id: "juul2", badge: "GEN 2 ARRIVAL",
-    title: "JUUL 2", subtitle: "Next-Gen Vaping.",
-    desc: "Intelligent puff-sensors, premium glowing indicators & robust vapor draw. Hand-delivered across Dubai in under 2 hours.",
+    id: "juul1", badge: "JUUL Classic Pods",
+    title: "JUUL Classic.", subtitle: "2 Signature Flavors.",
+    desc: "Want that clean, familiar hit? Buy Juul Pods in UAE with fast delivery (Virginia Tobacco and Menthol)",
+    cta: "Shop Classic Pods", color: "#10B981", version: "juul1",
+    specs: [
+      { label: "Design", value: "Ultra-Slim" },
+      { label: "Pods", value: "Click & Play" },
+      { label: "Temp", value: "Regulated" },
+      { label: "Body", value: "Anodized" }
+    ]
+  },
+  {
+    id: "juul2", badge: "JUUL 2 Is Here",
+    title: "JUUL 2.", subtitle: "Next-Gen Vaping.",
+    desc: "Upgrade your setup with the latest JUUL device UAE options: grab a JUUL starter kit UAE or just top up on pods.",
     cta: "Shop JUUL 2", color: "#E11D48", version: "juul2",
     specs: [
       { label: "Battery", value: "250mAh+" },
@@ -18,26 +30,14 @@ const slides = [
     ]
   },
   {
-    id: "juul1", badge: "SIGNATURE BLEND",
-    title: "JUUL Classic", subtitle: "3 Signature Aromas.",
-    desc: "The original compact masterpiece — perfectly engineered for Cool Mint, Virginia Tobacco & Crisp Menthol.",
-    cta: "Shop Classic", color: "#10B981", version: "juul1",
-    specs: [
-      { label: "Design", value: "Ultra-Slim" },
-      { label: "Pods", value: "Click & Play" },
-      { label: "Temp", value: "Regulated" },
-      { label: "Body", value: "Anodized" }
-    ]
-  },
-  {
-    id: "express", badge: "UAE DISPATCH",
-    title: "2-Hour Express", subtitle: "100% Authentic.",
-    desc: "Fast dispatch across Dubai, Abu Dhabi & Sharjah. Free shipping on orders over AED 150. Genuine products only.",
+    id: "express", badge: "UAE Dispatch",
+    title: "2-Hour Dubai Delivery.", subtitle: "100% Authentic.",
+    desc: "Your go-to Juul vape pods Shop in UAE for authentic pods, devices, chargers, and accessories with fast delivery across Dubai and the UAE.",
     cta: "Explore Catalog", color: "#F59E0B", version: "all",
     specs: [
       { label: "Delivery", value: "2 Hours" },
       { label: "Quality", value: "Authentic" },
-      { label: "Shipping", value: "Free >150" },
+      { label: "Shipping", value: "Fast UAE" },
       { label: "Coverage", value: "All UAE" }
     ]
   },

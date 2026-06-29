@@ -20,71 +20,49 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
   const flavorsData = {
     juul1: [
       {
-        id: "mint",
-        title: "Cool Mint",
-        slogan: "A crisp burst of natural peppermint.",
-        desc: "Perfectly refreshing with a soothing exhale. Formulated using premium peppermint extracts and zero artificial coolants for a genuine crisp taste.",
-        color: "from-emerald-600 to-teal-900",
-        accent: "#10B981",
-        badge: "Best Seller",
+        id: "classic",
+        title: "Virginia Tobacco",
+        slogan: "Warm nostalgia. Zero ashtray smell.",
+        desc: "Love the act, miss the clutter? Your go-to cigarette alternative pod has finally arrived. Casual smokers tend to buy JUUL Pods Virginia Tobacco 3% in UAE for their smooth and subtle taste, and we know that when you're vaping for that smoky Virginia Tobacco strength (5% only, you know the drill!), only this satisfying hit will do. Smooth, slightly sweet, and always leak-free.",
+        color: "from-stone-600 to-zinc-950",
+        accent: "#78716C",
+        badge: "Fan Favorite",
         strength: "3.0% / 5.0%",
         packSize: "4 Pods per Pack"
       },
       {
-        id: "mango",
-        title: "Royal Mango",
-        slogan: "Sun-ripened tropical golden nectar.",
-        desc: "Rich, luscious, and deeply satisfying. This flavor captures the sweet fragrance of orchard-fresh alphonso mangoes on hot summer nights.",
-        color: "from-amber-600 to-orange-950",
-        accent: "#F59E0B",
-        badge: "Premium Collection",
-        strength: "5.0%",
-        packSize: "4 Pods per Pack"
-      },
-      {
-        id: "classic",
-        title: "Virginia Tobacco",
-        slogan: "Rich American tobacco with toasted notes.",
-        desc: "An earthy, full-bodied experience for traditionalists. Delivers smooth throat hits with classic Virginia leaf toasted leaf complexity.",
-        color: "from-stone-600 to-zinc-950",
-        accent: "#78716C",
-        badge: "Signature Tobacco",
+        id: "menthol",
+        title: "Menthol",
+        slogan: "That crisp snap of real peppermint.",
+        desc: "Fresh shouldn’t feel harsh. When you Buy JUUL pods Menthol in UAE, you’re picking between two vibes inside the same flavor: grab the 3% option for a gentle daily drive, or Buy Juul Pods Menthol 5% in UAE when you want that fuller ice-cold kick closer to the old school feeling. No artificial coolant taste here, just clean peppermint extract from puff to puff.",
+        color: "from-cyan-600 to-teal-900",
+        accent: "#06B6D4",
+        badge: "Best Seller",
         strength: "3.0% / 5.0%",
         packSize: "4 Pods per Pack"
       }
     ],
     juul2: [
       {
-        id: "polar-mint",
-        title: "Polar Mint",
-        slogan: "Intensely cooling icy peppermint.",
-        desc: "The next-generation mint experience. Enhanced vapor production delivers a blast of pure freezing mint that lingers pleasantly.",
+        id: "juul2-virginia-tobacco",
+        title: "Virginia Tobacco",
+        slogan: "Smooth, classic tobacco—no sugary aftertaste.",
+        desc: "If you like your flavor straightforward, this one’s it. JUUL 2 Virginia Tobacco pods 18mg deliver a warm, familiar tobacco profile with steady flavor delivery and a clean, satisfying throat hit. Perfect if you’re after a proper cigarette alternative pod—without the heavy ash vibe.",
+        color: "from-stone-600 to-zinc-950",
+        accent: "#78716C",
+        badge: "Best Seller",
+        strength: "1.8% (18mg)",
+        packSize: "2 Pods per Pack"
+      },
+      {
+        id: "juul2-crisp-menthol",
+        title: "Crisp Menthol",
+        slogan: "Cold, clean menthol—sharp in the best way.",
+        desc: "Want that fresh menthol snap without the candy vibe? Juul 2 pods Crisp Menthol 18mg in UAE are smooth on the inhale, icy on the exhale, and super consistent from first puff to last. A good choice if you're looking for some a clean throat hit and good nicotine salt delivery.",
         color: "from-cyan-500 to-blue-900",
         accent: "#06B6D4",
-        badge: "Most Intense",
-        strength: "18 mg/ml",
-        packSize: "2 Pods per Pack"
-      },
-      {
-        id: "autumn-tobacco",
-        title: "Autumn Tobacco",
-        slogan: "Mellow tobacco with tangy apple notes.",
-        desc: "A completely new take on tobacco. Rich roasted flavors perfectly balanced with a subtle hint of crisp autumn apples.",
-        color: "from-amber-700 to-red-950",
-        accent: "#B45309",
-        badge: "New Release",
-        strength: "18 mg/ml",
-        packSize: "2 Pods per Pack"
-      },
-      {
-        id: "ruby-berry",
-        title: "Ruby Berry",
-        slogan: "Wild red berries with a cool finish.",
-        desc: "A vibrant fusion of freshly picked wild berries. Sweet on the inhale with a surprisingly refreshing cool finish.",
-        color: "from-pink-600 to-rose-950",
-        accent: "#DB2777",
-        badge: "Fan Favorite",
-        strength: "18 mg/ml",
+        badge: "Premium Collection",
+        strength: "1.8% (18mg)",
         packSize: "2 Pods per Pack"
       }
     ]
@@ -117,13 +95,15 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
           <div className="space-y-2">
             <span className={`text-xs font-bold uppercase tracking-widest ${isLight ? "text-zinc-400" : "text-zinc-500"
               }`}>
-              Find Your Perfect Flavor
+              Find Your Perfect Match
             </span>
             <h2 className={`text-3xl sm:text-5xl font-extrabold ${isLight ? "text-zinc-950" : "text-white"}`}>
-              Explore Pods
+              Explore Juul Pods
             </h2>
             <p className={`text-sm pt-2 ${isLight ? "text-zinc-500" : "text-zinc-400"}`}>
-              Authentic flavors crafted for the ultimate satisfaction. Select your device type to see available options.
+              Craving a consistent hit? As your go-to Juul vape pods Shop in UAE, we keep it simple: 100% authentic products stocked and shipped locally.
+              Whether you’re chasing the 5% Virginia Tobacco alternative feel or something fruitier, just pick your device model below to see every juul pod flavor we have on hand right now
+              .
             </p>
           </div>
 
@@ -133,8 +113,8 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
             <button
               onClick={() => { setDeviceFilter("juul2"); setActiveTab(0); }}
               className={`flex-1 py-2.5 text-sm font-black uppercase tracking-widest rounded-xl transition-all ${deviceFilter === "juul2"
-                  ? isLight ? "bg-white text-zinc-950 shadow-sm" : "bg-white/10 text-white shadow-sm"
-                  : isLight ? "text-zinc-500 hover:text-zinc-800" : "text-zinc-500 hover:text-zinc-300"
+                ? isLight ? "bg-white text-zinc-950 shadow-sm" : "bg-white/10 text-white shadow-sm"
+                : isLight ? "text-zinc-500 hover:text-zinc-800" : "text-zinc-500 hover:text-zinc-300"
                 }`}
             >
               JUUL 2 Pods
@@ -142,8 +122,8 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
             <button
               onClick={() => { setDeviceFilter("juul1"); setActiveTab(0); }}
               className={`flex-1 py-2.5 text-sm font-black uppercase tracking-widest rounded-xl transition-all ${deviceFilter === "juul1"
-                  ? isLight ? "bg-white text-zinc-950 shadow-sm" : "bg-white/10 text-white shadow-sm"
-                  : isLight ? "text-zinc-500 hover:text-zinc-800" : "text-zinc-500 hover:text-zinc-300"
+                ? isLight ? "bg-white text-zinc-950 shadow-sm" : "bg-white/10 text-white shadow-sm"
+                : isLight ? "text-zinc-500 hover:text-zinc-800" : "text-zinc-500 hover:text-zinc-300"
                 }`}
             >
               JUUL 1 Pods
@@ -161,10 +141,10 @@ export default function FlavorTeaser({ setCurrentPage, theme }) {
                 key={flavor.id}
                 onClick={() => setActiveTab(index)}
                 className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between cursor-pointer ${activeTab === index
-                    ? isLight
-                      ? "bg-white border-zinc-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
-                      : "bg-white/5 border-white/10 shadow-lg"
-                    : "bg-transparent border-transparent opacity-55 hover:opacity-90"
+                  ? isLight
+                    ? "bg-white border-zinc-200 shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+                    : "bg-white/5 border-white/10 shadow-lg"
+                  : "bg-transparent border-transparent opacity-55 hover:opacity-90"
                   }`}
               >
                 <div>

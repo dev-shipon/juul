@@ -11,19 +11,19 @@ export default function HowItWorks({ theme }) {
       icon: <Smartphone className="w-6 h-6 transition-colors duration-500" />,
       step: "01",
       title: "Pick Your Device",
-      desc: "Select your preferred premium anodized metal finish (Slate or Matte Carbon Black) designed for sleek everyday carry."
+      desc: "Go with the classic JUUL 1 for a compact, lightweight carry or grab the JUUL 2 for upgraded flavor delivery and a smarter draw. Both fit in your palm and charge magnetically via USB."
     },
     {
       icon: <Sparkles className="w-6 h-6 transition-colors duration-500" />,
       step: "02",
       title: "Snap In Your Pod",
-      desc: "Choose from our premium pre-filled flavor pods (Cool Mint, Royal Mango, Virginia Tobacco, Menthol) and snap it into place."
+      desc: "Nicotine salt pod. Pick your pod, available in Cool Mint, Virginia Tobacco, Mango, Summer Menthol, and so many more flavors that click to perfection. Nicotine salt that goes on smoothly for consistency with the burst that always satisfies, all packed in. Never refill a lost & unmissable, just refill when YOU'RE ready."
     },
     {
       icon: <Wind className="w-6 h-6 transition-colors duration-500" />,
       step: "03",
-      title: "Inhale & Enjoy",
-      desc: "Micro-sensors automatically activate upon draw, heating the flavor vapor to a perfectly stable temperature for pure satisfaction."
+      title: "Draw & Go",
+      desc: "No fire button here. Just inhale: the device auto-activates and heats your pod to the right temperature every time. Clean vapor, solid throat hit, and reliable flavor from first puff to last. That's it. You're set."
     }
   ];
 
@@ -60,10 +60,10 @@ export default function HowItWorks({ theme }) {
           }`}>
             How It Works
           </h2>
-          <p className={`text-sm max-w-md mx-auto font-medium leading-relaxed ${
+          <p className={`text-sm max-w-xl mx-auto font-medium leading-relaxed ${
             isLight ? "text-zinc-550" : "text-zinc-400"
           }`}>
-            Experience premium nicotine delivery in three simple steps. No buttons, no complex settings.
+            New to JUUL? It's honestly one of the simplest pod system vapes out there. No buttons, no settings, no learning curve. Three steps and you're good.
           </p>
         </motion.div>
 
